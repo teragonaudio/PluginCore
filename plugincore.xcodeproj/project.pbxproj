@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24E45D400F9BB462008F34CE /* appMac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D280F9BB462008F34CE /* appMac.cpp */; };
+		24E45D410F9BB462008F34CE /* appMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D290F9BB462008F34CE /* appMac.h */; };
+		24E45D420F9BB462008F34CE /* auLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D2A0F9BB462008F34CE /* auLoader.cpp */; };
+		24E45D430F9BB462008F34CE /* auLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D2B0F9BB462008F34CE /* auLoader.h */; };
+		24E45D440F9BB462008F34CE /* effectCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D2C0F9BB462008F34CE /* effectCore.cpp */; };
+		24E45D450F9BB462008F34CE /* effectCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D2D0F9BB462008F34CE /* effectCore.h */; };
+		24E45D460F9BB462008F34CE /* eventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D2E0F9BB462008F34CE /* eventManager.cpp */; };
+		24E45D470F9BB462008F34CE /* eventManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D2F0F9BB462008F34CE /* eventManager.h */; };
+		24E45D480F9BB462008F34CE /* pluginCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D300F9BB462008F34CE /* pluginCore.cpp */; };
+		24E45D490F9BB462008F34CE /* pluginCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D310F9BB462008F34CE /* pluginCore.h */; };
+		24E45D4A0F9BB462008F34CE /* pluginCoreMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D320F9BB462008F34CE /* pluginCoreMidi.cpp */; };
+		24E45D4B0F9BB462008F34CE /* pluginCorePreset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D330F9BB462008F34CE /* pluginCorePreset.cpp */; };
+		24E45D4C0F9BB462008F34CE /* pluginLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D340F9BB462008F34CE /* pluginLoader.cpp */; };
+		24E45D4D0F9BB462008F34CE /* pluginLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D350F9BB462008F34CE /* pluginLoader.h */; };
+		24E45D4E0F9BB462008F34CE /* productDir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D360F9BB462008F34CE /* productDir.cpp */; };
+		24E45D4F0F9BB462008F34CE /* productDir.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D370F9BB462008F34CE /* productDir.h */; };
+		24E45D500F9BB462008F34CE /* vstLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D380F9BB462008F34CE /* vstLoader.cpp */; };
+		24E45D510F9BB462008F34CE /* vstLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D390F9BB462008F34CE /* vstLoader.h */; };
+		24E45D520F9BB462008F34CE /* vstLoaderEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D3A0F9BB462008F34CE /* vstLoaderEditor.cpp */; };
+		24E45D530F9BB462008F34CE /* vstLoaderHost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D3B0F9BB462008F34CE /* vstLoaderHost.cpp */; };
+		24E45D540F9BB462008F34CE /* xmlLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D3C0F9BB462008F34CE /* xmlLogger.cpp */; };
+		24E45D550F9BB462008F34CE /* xmlLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D3D0F9BB462008F34CE /* xmlLogger.h */; };
+		24E45D560F9BB462008F34CE /* xmlWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24E45D3E0F9BB462008F34CE /* xmlWriter.cpp */; };
+		24E45D570F9BB462008F34CE /* xmlWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D3F0F9BB462008F34CE /* xmlWriter.h */; };
+		24E45D5D0F9BB493008F34CE /* xcode_prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E45D5C0F9BB493008F34CE /* xcode_prefix.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		24E45D280F9BB462008F34CE /* appMac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = appMac.cpp; path = source/appMac.cpp; sourceTree = "<group>"; };
+		24E45D290F9BB462008F34CE /* appMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = appMac.h; path = source/appMac.h; sourceTree = "<group>"; };
+		24E45D2A0F9BB462008F34CE /* auLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = auLoader.cpp; path = source/auLoader.cpp; sourceTree = "<group>"; };
+		24E45D2B0F9BB462008F34CE /* auLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = auLoader.h; path = source/auLoader.h; sourceTree = "<group>"; };
+		24E45D2C0F9BB462008F34CE /* effectCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = effectCore.cpp; path = source/effectCore.cpp; sourceTree = "<group>"; };
+		24E45D2D0F9BB462008F34CE /* effectCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = effectCore.h; path = source/effectCore.h; sourceTree = "<group>"; };
+		24E45D2E0F9BB462008F34CE /* eventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = eventManager.cpp; path = source/eventManager.cpp; sourceTree = "<group>"; };
+		24E45D2F0F9BB462008F34CE /* eventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = eventManager.h; path = source/eventManager.h; sourceTree = "<group>"; };
+		24E45D300F9BB462008F34CE /* pluginCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pluginCore.cpp; path = source/pluginCore.cpp; sourceTree = "<group>"; };
+		24E45D310F9BB462008F34CE /* pluginCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pluginCore.h; path = source/pluginCore.h; sourceTree = "<group>"; };
+		24E45D320F9BB462008F34CE /* pluginCoreMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pluginCoreMidi.cpp; path = source/pluginCoreMidi.cpp; sourceTree = "<group>"; };
+		24E45D330F9BB462008F34CE /* pluginCorePreset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pluginCorePreset.cpp; path = source/pluginCorePreset.cpp; sourceTree = "<group>"; };
+		24E45D340F9BB462008F34CE /* pluginLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pluginLoader.cpp; path = source/pluginLoader.cpp; sourceTree = "<group>"; };
+		24E45D350F9BB462008F34CE /* pluginLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pluginLoader.h; path = source/pluginLoader.h; sourceTree = "<group>"; };
+		24E45D360F9BB462008F34CE /* productDir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = productDir.cpp; path = source/productDir.cpp; sourceTree = "<group>"; };
+		24E45D370F9BB462008F34CE /* productDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = productDir.h; path = source/productDir.h; sourceTree = "<group>"; };
+		24E45D380F9BB462008F34CE /* vstLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vstLoader.cpp; path = source/vstLoader.cpp; sourceTree = "<group>"; };
+		24E45D390F9BB462008F34CE /* vstLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vstLoader.h; path = source/vstLoader.h; sourceTree = "<group>"; };
+		24E45D3A0F9BB462008F34CE /* vstLoaderEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vstLoaderEditor.cpp; path = source/vstLoaderEditor.cpp; sourceTree = "<group>"; };
+		24E45D3B0F9BB462008F34CE /* vstLoaderHost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vstLoaderHost.cpp; path = source/vstLoaderHost.cpp; sourceTree = "<group>"; };
+		24E45D3C0F9BB462008F34CE /* xmlLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = xmlLogger.cpp; path = source/xmlLogger.cpp; sourceTree = "<group>"; };
+		24E45D3D0F9BB462008F34CE /* xmlLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlLogger.h; path = source/xmlLogger.h; sourceTree = "<group>"; };
+		24E45D3E0F9BB462008F34CE /* xmlWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = xmlWriter.cpp; path = source/xmlWriter.cpp; sourceTree = "<group>"; };
+		24E45D3F0F9BB462008F34CE /* xmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmlWriter.h; path = source/xmlWriter.h; sourceTree = "<group>"; };
+		24E45D5C0F9BB493008F34CE /* xcode_prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xcode_prefix.h; path = resources/xcode_prefix.h; sourceTree = "<group>"; };
+		D2AAC046055464E500DB518D /* libplugincore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugincore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D289987405E68DCB004EDB86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* plugincore */ = {
+			isa = PBXGroup;
+			children = (
+				C6A0FF2B0290797F04C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				24E45D5B0F9BB47B008F34CE /* Resources */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+			);
+			name = plugincore;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				24E45D280F9BB462008F34CE /* appMac.cpp */,
+				24E45D2A0F9BB462008F34CE /* auLoader.cpp */,
+				24E45D2C0F9BB462008F34CE /* effectCore.cpp */,
+				24E45D2E0F9BB462008F34CE /* eventManager.cpp */,
+				24E45D300F9BB462008F34CE /* pluginCore.cpp */,
+				24E45D320F9BB462008F34CE /* pluginCoreMidi.cpp */,
+				24E45D330F9BB462008F34CE /* pluginCorePreset.cpp */,
+				24E45D340F9BB462008F34CE /* pluginLoader.cpp */,
+				24E45D360F9BB462008F34CE /* productDir.cpp */,
+				24E45D380F9BB462008F34CE /* vstLoader.cpp */,
+				24E45D3A0F9BB462008F34CE /* vstLoaderEditor.cpp */,
+				24E45D3B0F9BB462008F34CE /* vstLoaderHost.cpp */,
+				24E45D3C0F9BB462008F34CE /* xmlLogger.cpp */,
+				24E45D3E0F9BB462008F34CE /* xmlWriter.cpp */,
+				24E45D290F9BB462008F34CE /* appMac.h */,
+				24E45D2B0F9BB462008F34CE /* auLoader.h */,
+				24E45D2D0F9BB462008F34CE /* effectCore.h */,
+				24E45D2F0F9BB462008F34CE /* eventManager.h */,
+				24E45D310F9BB462008F34CE /* pluginCore.h */,
+				24E45D350F9BB462008F34CE /* pluginLoader.h */,
+				24E45D370F9BB462008F34CE /* productDir.h */,
+				24E45D390F9BB462008F34CE /* vstLoader.h */,
+				24E45D3D0F9BB462008F34CE /* xmlLogger.h */,
+				24E45D3F0F9BB462008F34CE /* xmlWriter.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC046055464E500DB518D /* libplugincore.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24E45D5B0F9BB47B008F34CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24E45D5C0F9BB493008F34CE /* xcode_prefix.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C6A0FF2B0290797F04C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC043055464E500DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E45D410F9BB462008F34CE /* appMac.h in Headers */,
+				24E45D430F9BB462008F34CE /* auLoader.h in Headers */,
+				24E45D450F9BB462008F34CE /* effectCore.h in Headers */,
+				24E45D470F9BB462008F34CE /* eventManager.h in Headers */,
+				24E45D490F9BB462008F34CE /* pluginCore.h in Headers */,
+				24E45D4D0F9BB462008F34CE /* pluginLoader.h in Headers */,
+				24E45D4F0F9BB462008F34CE /* productDir.h in Headers */,
+				24E45D510F9BB462008F34CE /* vstLoader.h in Headers */,
+				24E45D550F9BB462008F34CE /* xmlLogger.h in Headers */,
+				24E45D570F9BB462008F34CE /* xmlWriter.h in Headers */,
+				24E45D5D0F9BB493008F34CE /* xcode_prefix.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC045055464E500DB518D /* plugincore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91EB08733DB70010E9CD /* Build configuration list for PBXNativeTarget "plugincore" */;
+			buildPhases = (
+				D2AAC043055464E500DB518D /* Headers */,
+				D2AAC044055464E500DB518D /* Sources */,
+				D289987405E68DCB004EDB86 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = plugincore;
+			productName = plugincore;
+			productReference = D2AAC046055464E500DB518D /* libplugincore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "plugincore" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* plugincore */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC045055464E500DB518D /* plugincore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC044055464E500DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E45D400F9BB462008F34CE /* appMac.cpp in Sources */,
+				24E45D420F9BB462008F34CE /* auLoader.cpp in Sources */,
+				24E45D440F9BB462008F34CE /* effectCore.cpp in Sources */,
+				24E45D460F9BB462008F34CE /* eventManager.cpp in Sources */,
+				24E45D480F9BB462008F34CE /* pluginCore.cpp in Sources */,
+				24E45D4A0F9BB462008F34CE /* pluginCoreMidi.cpp in Sources */,
+				24E45D4B0F9BB462008F34CE /* pluginCorePreset.cpp in Sources */,
+				24E45D4C0F9BB462008F34CE /* pluginLoader.cpp in Sources */,
+				24E45D4E0F9BB462008F34CE /* productDir.cpp in Sources */,
+				24E45D500F9BB462008F34CE /* vstLoader.cpp in Sources */,
+				24E45D520F9BB462008F34CE /* vstLoaderEditor.cpp in Sources */,
+				24E45D530F9BB462008F34CE /* vstLoaderHost.cpp in Sources */,
+				24E45D540F9BB462008F34CE /* xmlLogger.cpp in Sources */,
+				24E45D560F9BB462008F34CE /* xmlWriter.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91EC08733DB70010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = plugincore;
+			};
+			name = Debug;
+		};
+		1DEB91ED08733DB70010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = plugincore;
+			};
+			name = Release;
+		};
+		1DEB91F008733DB70010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./resources/xcode_prefix.h;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB91F108733DB70010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91EB08733DB70010E9CD /* Build configuration list for PBXNativeTarget "plugincore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91EC08733DB70010E9CD /* Debug */,
+				1DEB91ED08733DB70010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "plugincore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91F008733DB70010E9CD /* Debug */,
+				1DEB91F108733DB70010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

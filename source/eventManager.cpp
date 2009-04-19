@@ -67,7 +67,8 @@ void eventManager::setTimeSignature(double upper, double lower) {
 }
 
 void eventManager::update(unsigned long ticks) {
-  for(std::vector<tEvent*>::iterator iter = m_events.begin(); iter != m_events.end();) {
+  std::vector<tEvent*>::iterator iter = m_events.begin();
+  while(iter != m_events.end()) {
     // Subtract ticks from this event
     (*iter)->ticks -= ticks;
     

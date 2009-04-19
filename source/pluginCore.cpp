@@ -390,7 +390,7 @@ inline void pluginCore::process(float **inputs, float **outputs, long frames)
 {
   m_logger->log(XML_LOGGER_TYPE_PROCESS, "frames", frames);
 #if USE_PC_EVENTS
-  m_events.update(m_events.getTicks() + frames);
+  m_events.update(frames);
 #endif
 }
 

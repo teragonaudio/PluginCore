@@ -103,9 +103,6 @@ public:
     */
   virtual void addEvent(eventListener *el, int bars, int beats, int sixteenths, void *data, bool update);
   
-  /*! \brief Return the current number of ticks. */
-  unsigned long getTicks() const;
-  
   /*! \brief Set the tempo for the event manager
     * \param bpm The tempo in beats per minute
     *
