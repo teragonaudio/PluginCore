@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\interface&quot;;&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -117,7 +117,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\interface&quot;;&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -202,12 +202,48 @@
 		<Filter
 			Name="PluginCore Interface"
 			>
+			<Filter
+				Name="buffer"
+				>
+				<File
+					RelativePath="..\interface\buffer\AudioBuffer.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\interface\buffer\AudioBuffer.h"
+					>
+				</File>
+				<File
+					RelativePath="..\interface\buffer\AudioBufferSet.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\interface\buffer\AudioBufferSet.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="plugin"
+				>
+				<File
+					RelativePath="..\interface\plugin\Plugin.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Source"
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath=".\PluginLoader.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\PluginLoader.h"
+				>
+			</File>
 			<File
 				RelativePath=".\VstWrapper.cpp"
 				>
