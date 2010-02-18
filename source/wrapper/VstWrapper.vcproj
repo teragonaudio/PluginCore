@@ -200,38 +200,6 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="PluginCore Interface"
-			>
-			<Filter
-				Name="buffer"
-				>
-				<File
-					RelativePath="..\interface\buffer\AudioBuffer.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\interface\buffer\AudioBuffer.h"
-					>
-				</File>
-				<File
-					RelativePath="..\interface\buffer\AudioBufferSet.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\interface\buffer\AudioBufferSet.h"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="plugin"
-				>
-				<File
-					RelativePath="..\interface\plugin\Plugin.h"
-					>
-				</File>
-			</Filter>
-		</Filter>
-		<Filter
 			Name="Source"
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
@@ -256,6 +224,38 @@
 				RelativePath=".\VstWrapper.h"
 				>
 			</File>
+			<Filter
+				Name="interface"
+				>
+				<Filter
+					Name="buffer"
+					>
+					<File
+						RelativePath="..\interface\buffer\AudioBuffer.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\interface\buffer\AudioBuffer.h"
+						>
+					</File>
+					<File
+						RelativePath="..\interface\buffer\AudioBufferSet.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\interface\buffer\AudioBufferSet.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="plugin"
+					>
+					<File
+						RelativePath="..\interface\plugin\Plugin.h"
+						>
+					</File>
+				</Filter>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Resources"
