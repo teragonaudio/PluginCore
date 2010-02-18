@@ -15,11 +15,11 @@ namespace plugincore {
     const Sample getSample(const BufferIndex channel, const BufferIndex index) { return 0.0; };
     void setSample(const BufferIndex channel, const BufferIndex index, const Sample value) {};
     
-    const BufferIndex getSize() const { return 0; };
-    void setSize(const BufferIndex value) {};
-
     const BufferIndex getNumChannels() const { return 0; };
     void setNumChannels(const BufferIndex value) {};
+
+    const BufferIndex getSize() const { return 0; };
+    void setSize(const BufferIndex value) {};
   };
 }
 }
