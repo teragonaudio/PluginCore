@@ -1,4 +1,8 @@
 build
+*.ncb
+*.suo
+*.user
 *.pbxuser
 *.perspectivev3
 vstsdk2.4/*
+source/wrapper/vstsdk2.4/*
