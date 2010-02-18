@@ -56,9 +56,12 @@ namespace plugincore {
   }
 
   void VstWrapper::processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames) {
-    AudioBufferSet inputSet(this->plugin->getNumInputs(), sampleFrames);
-    AudioBufferSet outputSet(this->plugin->getNumOutputs(), sampleFrames);
+    AudioBufferSet inputSet, outputSet;
 
+    inputSet.setNumChannels(this->plugin->getNumInputs());
+    inputSet.setSize(sampleFrames);
+    outputSet.setNumChannels(this->plugin->getNumOutputs());
+    outputSet.setSize(sampleFrames);
     inputSet.setBuffers(static_cast<float**>(inputs));
     outputSet.setBuffers(static_cast<float**>(outputs));
 
