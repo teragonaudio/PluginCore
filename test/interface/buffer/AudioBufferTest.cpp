@@ -3,8 +3,43 @@
 
 namespace teragon {
 namespace plugincore {
-  TEST(AudioBufferTest, testNothing) {
-    EXPECT_EQ(0, 1);
+  TEST(AudioBufferTest, testParametersAfterCreation) {
+  }
+
+  TEST(AudioBufferTest, getBuffer) {
+  }
+
+  TEST(AudioBufferTest, getBufferAfterBadCtorCall) {
+  }
+
+  TEST(AudioBufferTest, setBuffer) {
+  }
+
+  TEST(AudioBufferTest, setBufferToNull) {
+  }
+
+  TEST(AudioBufferTest, getSample) {
+  }
+
+  TEST(AudioBufferTest, getSampleBeyondBufferSize) {
+  }
+
+  TEST(AudioBufferTest, getSampleAfterBadCtorCall) {
+  }
+
+  TEST(AudioBufferTest, getSize) {
+  }
+
+  TEST(AudioBufferTest, getSizeAfterBadCtorCall) {
+  }
+
+  TEST(AudioBufferTest, setSize) {
+  }
+
+  TEST(AudioBufferTest, setSizeToZero) {
+  }
+
+  TEST(AudioBufferTest, setSizeToNegativeValue) {
   }
 }
 }
