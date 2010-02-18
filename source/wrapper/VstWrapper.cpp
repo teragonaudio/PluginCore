@@ -10,10 +10,28 @@
 #include "PluginLoader.h"
 #endif
 
+#if WINDOWS
+#ifndef __PluginLoaderWindows_h__
+#include "PluginLoaderWindows.h"
+#endif
+#endif
+
+#if MAC
+#ifndef __PluginLoaderMac_h__
+#include "PluginLoaderMac.h"
+#endif
+#endif
+
 AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
-  teragon::plugincore::PluginLoader PluginLoader;
-  teragon::plugincore::Plugin* plugin = PluginLoader.load();
-  return new teragon::plugincore::VstWrapper(PluginLoader.load(), audioMaster);
+  teragon::plugincore::PluginLoader* pluginLoader = NULL;
+#if WINDOWS
+  pluginLoader = new PluginLoaderWindows();
+#elif MAC
+  pluginLoader = new PluginLoaderMac();
+#endif
+  teragon::plugincore::Plugin* plugin = pluginLoader->load();
+  delete pluginLoader;
+  return new teragon::plugincore::VstWrapper(plugin, audioMaster);
 }
 
 namespace teragon {

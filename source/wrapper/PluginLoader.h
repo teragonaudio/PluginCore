@@ -11,18 +11,10 @@ namespace teragon {
 namespace plugincore {
   class PluginLoader {
   public:
-    PluginLoader();
-    ~PluginLoader();
+    PluginLoader() {};
+    virtual ~PluginLoader();
 
-    Plugin* load();
-    Plugin* load(const std::string& libraryName);
-
-    const std::string& getPluginName() const { return this->pluginName; };
-
-  private:
-    const std::string& findPluginName();
-
-    std::string pluginName;
+    virtual Plugin* load() = 0;
   };
 }
 }
