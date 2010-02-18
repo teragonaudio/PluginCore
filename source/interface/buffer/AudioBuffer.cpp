@@ -4,7 +4,7 @@
 
 namespace teragon {
 namespace plugincore {
-  AudioBuffer::AudioBuffer() {
+  AudioBuffer::AudioBuffer() : buffer(NULL), size(0) {
   }
   
   AudioBuffer::~AudioBuffer() {
@@ -14,7 +14,20 @@ namespace plugincore {
     return 0.0f;
   }
   
+  void AudioBuffer::setBuffer(Sample* value, const BufferIndex size) {
+    if(value != NULL && size > 0) {
+      this->buffer = value;
+      this->size = size;
+    }
+  }
+
   void AudioBuffer::setSample(const BufferIndex index, const Sample value) {
+  }
+
+  void AudioBuffer::setSize(const BufferIndex value) {
+    if(value > 0) {
+      this->size = value;
+    }
   }
 }
 }
