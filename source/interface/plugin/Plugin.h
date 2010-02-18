@@ -6,7 +6,7 @@
 #endif
 
 namespace teragon {
-  namespace plugincore {
+namespace plugincore {
 	class Plugin {
   public:
 		Plugin();

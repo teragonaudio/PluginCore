@@ -28,14 +28,19 @@ namespace plugincore {
       setUniqueID(plugin->getPluginId());
       canProcessReplacing();
     }
+
+    plugin->initialize();
   }
 
   VstWrapper::~VstWrapper() {
+    // Unload actual plugin library
+    delete plugin;
   }
 
   void VstWrapper::processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames) {
     AudioBufferSet inputSet(this->plugin->getNumInputs(), sampleFrames);
     AudioBufferSet outputSet(this->plugin->getNumOutputs(), sampleFrames);
+
     inputSet.setBuffers(static_cast<float**>(inputs));
     outputSet.setBuffers(static_cast<float**>(outputs));
 
