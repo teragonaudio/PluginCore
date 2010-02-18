@@ -1,23 +1,29 @@
-/*
- *  Plugin.h
- *  plugincore
- *
- *  Created by Nik Reiman on 2010-01-14.
- *  Copyright 2010 Singbox AB. All rights reserved.
- *
- */
+#ifndef __Plugin_h__
+#define __Plugin_h__
 
-#include "AudioBufferSet.h"
+#ifndef __AudioBufferSet_h__
+#include "buffer/AudioBufferSet.h"
+#endif
 
 namespace teragon {
   namespace plugincore {
 	class Plugin {
+  public:
 		Plugin();
 		virtual ~Plugin();
 		
 		virtual void initialize() = 0;
-		virtual void process(const AudioBufferSet& inputs, AudioBufferSet& outputs, const BufferIndex frames) = 0;
+		virtual void process(const AudioBufferSet& inputs, AudioBufferSet& outputs) = 0;
 		
+    virtual const int getNumInputs() const = 0;
+    virtual const int getNumOutputs() const = 0;
+    virtual const unsigned long getPluginId() const = 0;
+    virtual const unsigned long getPluginManufacturerId() const = 0;
+    virtual const int getNumPrograms() const = 0;
+
+    virtual const int getNumParameters() const = 0;
 	};
 }
 }
+
+#endif

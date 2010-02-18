@@ -1,13 +1,6 @@
-/*
- *  AudioBuffer.cpp
- *  plugincore
- *
- *  Created by Nik Reiman on 2010-02-13.
- *  Copyright 2010 Singbox AB. All rights reserved.
- *
- */
-
+#ifndef __AudioBuffer_h__
 #include "AudioBuffer.h"
+#endif
 
 namespace teragon {
 namespace plugincore {

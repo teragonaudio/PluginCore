@@ -1,13 +1,6 @@
-/*
- *  AudioBufferSet.h
- *  plugincore
- *
- *  Created by Nik Reiman on 2010-02-13.
- *  Copyright 2010 Singbox AB. All rights reserved.
- *
- */
-
+#ifndef __AudioBuffer_h__
 #include "AudioBuffer.h"
+#endif
 
 namespace teragon {
 namespace plugincore {
@@ -16,11 +9,14 @@ namespace plugincore {
     AudioBufferSet(const BufferIndex numChannels, const BufferIndex size);
     ~AudioBufferSet();
     
-    const Sample getSample(const BufferIndex channel, const BufferIndex index);
-    void setSample(const BufferIndex channel, const BufferIndex index, const Sample value);
+    const Sample** getBuffers() { return 0; };
+    void setBuffers(Sample** buffers) {};
+
+    const Sample getSample(const BufferIndex channel, const BufferIndex index) { return 0.0; };
+    void setSample(const BufferIndex channel, const BufferIndex index, const Sample value) {};
     
-    const BufferIndex getSize();
-    const BufferIndex getNumChannels();
+    const BufferIndex getSize() { return 0; };
+    const BufferIndex getNumChannels() { return 0; };
   };
 }
 }

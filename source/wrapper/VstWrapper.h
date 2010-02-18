@@ -1,19 +1,27 @@
 #ifndef __VstWrapper_h__
 #define __VstWrapper_h__
 
+#ifndef __audioeffectx__
 #include "audioeffectx.h"
+#endif
 
-#define NUM_PARAMS 0
-#define NUM_INPUTS 2
-#define NUM_OUTPUTS 2
-#define UNIQUE_ID 'VstW'
+#ifndef __Plugin_h__
+#include "plugin/Plugin.h"
+#endif
 
-class VstWrapper : public AudioEffectX {
-public:
-  VstWrapper(audioMasterCallback audioMaster);
-  ~VstWrapper();
+namespace teragon {
+namespace plugincore {
+  class VstWrapper : public AudioEffectX {
+  public:
+    VstWrapper(Plugin *plugin, audioMasterCallback audioMaster);
+    ~VstWrapper();
 
-  void processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames);
-};
+    void processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames);
+
+  private:
+    Plugin *plugin;
+  };
+}
+}
 
 #endif
