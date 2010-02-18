@@ -1,4 +1,4 @@
-LIBRARY VstWrapper
+LIBRARY wrapper
 EXPORTS
 VSTPluginMain 
 main=VSTPluginMain

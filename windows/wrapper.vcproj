@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="VstWrapper"
+	Name="wrapper"
 	ProjectGUID="{34BA9737-80B1-433C-8F18-027D415FA2A6}"
 	RootNamespace="VstWrapper"
 	Keyword="Win32Proj"
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\interface&quot;;&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source\interface&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
 				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -117,7 +117,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\interface&quot;;&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source\interface&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
 				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -175,27 +175,27 @@
 			Name="VST Source"
 			>
 			<File
-				RelativePath=".\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h"
+				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h"
 				>
 			</File>
 			<File
-				RelativePath=".\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp"
+				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h"
+				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h"
 				>
 			</File>
 			<File
-				RelativePath=".\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp"
+				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h"
+				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp"
+				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp"
 				>
 			</File>
 		</Filter>
@@ -205,57 +205,25 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\PluginLoader.h"
+				RelativePath="..\source\wrapper\PluginLoader.h"
 				>
 			</File>
 			<File
-				RelativePath=".\PluginLoaderWindows.cpp"
+				RelativePath="..\source\wrapper\PluginLoaderWindows.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\PluginLoaderWindows.h"
+				RelativePath="..\source\wrapper\PluginLoaderWindows.h"
 				>
 			</File>
 			<File
-				RelativePath=".\VstWrapper.cpp"
+				RelativePath="..\source\wrapper\VstWrapper.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\VstWrapper.h"
+				RelativePath="..\source\wrapper\VstWrapper.h"
 				>
 			</File>
-			<Filter
-				Name="interface"
-				>
-				<Filter
-					Name="buffer"
-					>
-					<File
-						RelativePath="..\interface\buffer\AudioBuffer.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\interface\buffer\AudioBuffer.h"
-						>
-					</File>
-					<File
-						RelativePath="..\interface\buffer\AudioBufferSet.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\interface\buffer\AudioBufferSet.h"
-						>
-					</File>
-				</Filter>
-				<Filter
-					Name="plugin"
-					>
-					<File
-						RelativePath="..\interface\plugin\Plugin.h"
-						>
-					</File>
-				</Filter>
-			</Filter>
 		</Filter>
 		<Filter
 			Name="Resources"
