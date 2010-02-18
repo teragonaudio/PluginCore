@@ -181,6 +181,10 @@
 				Name="buffer"
 				>
 				<File
+					RelativePath="..\test\interface\buffer\AudioBufferSetTest.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\test\interface\buffer\AudioBufferTest.cpp"
 					>
 				</File>
