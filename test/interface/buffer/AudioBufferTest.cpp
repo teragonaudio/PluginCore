@@ -3,13 +3,10 @@
 
 namespace teragon {
 namespace plugincore {
-  TEST(AudioBufferTest, testParametersAfterCreation) {
+  TEST(AudioBufferTest, createEmptyBuffer) {
   }
 
   TEST(AudioBufferTest, getBuffer) {
-  }
-
-  TEST(AudioBufferTest, getBufferAfterBadCtorCall) {
   }
 
   TEST(AudioBufferTest, setBuffer) {
