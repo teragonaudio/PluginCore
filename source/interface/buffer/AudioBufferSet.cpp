@@ -4,7 +4,7 @@
 
 namespace teragon {
 namespace plugincore {
-  AudioBufferSet::AudioBufferSet(const BufferIndex numChannels, const BufferIndex size) {
+  AudioBufferSet::AudioBufferSet() {
   }
   
   AudioBufferSet::~AudioBufferSet() {

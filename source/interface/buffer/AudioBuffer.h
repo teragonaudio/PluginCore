@@ -8,16 +8,17 @@ namespace plugincore {
   
 	class AudioBuffer {
   public:
-    AudioBuffer(const BufferIndex size);
+    AudioBuffer();
     ~AudioBuffer();
     
-    const Sample* getBuffer();
-    void setBuffer(Sample* value);
+    const Sample* getBuffer() { return 0; };
+    void setBuffer(Sample* value, const BufferIndex size);
 
     const Sample getSample(const BufferIndex index);
     void setSample(const BufferIndex index, const Sample value);
     
-    const BufferIndex getSize();
+    const BufferIndex getSize() { return 0; };
+    void setSize(const BufferIndex index) {};
 	};
 }
 }

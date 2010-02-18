@@ -6,7 +6,7 @@ namespace teragon {
 namespace plugincore {
   class AudioBufferSet {
   public:
-    AudioBufferSet(const BufferIndex numChannels, const BufferIndex size);
+    AudioBufferSet();
     ~AudioBufferSet();
     
     const Sample** getBuffers() { return 0; };
@@ -15,8 +15,11 @@ namespace plugincore {
     const Sample getSample(const BufferIndex channel, const BufferIndex index) { return 0.0; };
     void setSample(const BufferIndex channel, const BufferIndex index, const Sample value) {};
     
-    const BufferIndex getSize() { return 0; };
-    const BufferIndex getNumChannels() { return 0; };
+    const BufferIndex getSize() const { return 0; };
+    void setSize(const BufferIndex value) {};
+
+    const BufferIndex getNumChannels() const { return 0; };
+    void setNumChannels(const BufferIndex value) {};
   };
 }
 }
