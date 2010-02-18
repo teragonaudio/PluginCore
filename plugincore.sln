@@ -9,6 +9,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interface", "windows\interface.vcproj", "{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "windows\test.vcproj", "{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081} = {3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
