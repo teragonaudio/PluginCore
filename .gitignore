@@ -4,5 +4,4 @@ build
 *.user
 *.pbxuser
 *.perspectivev3
-vstsdk2.4/*
-source/wrapper/vstsdk2.4/*
+third-party/vstsdk2.4/*
