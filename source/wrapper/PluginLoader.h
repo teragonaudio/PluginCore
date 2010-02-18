@@ -12,7 +12,7 @@ namespace plugincore {
   class PluginLoader {
   public:
     PluginLoader() {};
-    virtual ~PluginLoader();
+    virtual ~PluginLoader() {};
 
     virtual Plugin* load() = 0;
   };

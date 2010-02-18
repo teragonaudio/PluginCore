@@ -25,9 +25,9 @@
 AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
   teragon::plugincore::PluginLoader* pluginLoader = NULL;
 #if WINDOWS
-  pluginLoader = new PluginLoaderWindows();
+  pluginLoader = new teragon::plugincore::PluginLoaderWindows();
 #elif MAC
-  pluginLoader = new PluginLoaderMac();
+  pluginLoader = new teragon::plugincore::PluginLoaderMac();
 #endif
   teragon::plugincore::Plugin* plugin = pluginLoader->load();
   delete pluginLoader;

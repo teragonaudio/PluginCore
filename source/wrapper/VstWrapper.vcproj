@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\interface&quot;;&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
+				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -118,7 +118,7 @@
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
 				AdditionalIncludeDirectories="&quot;$(ProjectDir)\..\interface&quot;;&quot;$(ProjectDir)\vstsdk2.4&quot;;&quot;$(ProjectDir)\vstsdk2.4\public.sdk\source\vst2.x&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
+				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -237,11 +237,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\PluginLoader.cpp"
+				RelativePath=".\PluginLoader.h"
 				>
 			</File>
 			<File
-				RelativePath=".\PluginLoader.h"
+				RelativePath=".\PluginLoaderWindows.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\PluginLoaderWindows.h"
 				>
 			</File>
 			<File
