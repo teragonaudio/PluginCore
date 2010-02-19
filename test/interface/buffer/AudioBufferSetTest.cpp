@@ -39,7 +39,7 @@ namespace plugincore {
   // A new buffer should have sane default return values for getters
   TEST_F(AudioBufferSetTest, createEmptyBufferSet) {
     AudioBufferSet audioBufferSet;
-    ASSERT_EQ(NULL, audioBufferSet.getBuffers());
+    ASSERT_EQ(NULL, audioBufferSet.getBufferData());
     ASSERT_EQ(0, audioBufferSet.getNumChannels());
     ASSERT_EQ(0, audioBufferSet.getSize());
   }
@@ -49,11 +49,11 @@ namespace plugincore {
   // and contents contain the data.
   TEST_F(AudioBufferSetTest, setBuffers) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     ASSERT_EQ(kTestBufferChannels, audioBufferSet.getNumChannels());
     ASSERT_EQ(kTestBufferSize, audioBufferSet.getSize());
     
-    const Sample** testData = audioBufferSet.getBuffers();
+    const Sample** testData = audioBufferSet.getBufferData();
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
       for(BufferIndex j = 0; j < kTestBufferSize; ++j) {
         ASSERT_EQ(sampleData[i][j], testData[i][j]);
@@ -63,41 +63,41 @@ namespace plugincore {
 
   TEST_F(AudioBufferSetTest, getSample) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     assertSampleDataEquals(audioBufferSet);
   }
 
   // Should return 0 if given an invalid channel
   TEST_F(AudioBufferSetTest, getSampleNegativeChannel) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     ASSERT_EQ(0.0, audioBufferSet.getSample(-1, 0));
   }
 
   // Should return 0 if given an invalid channel
   TEST_F(AudioBufferSetTest, getSampleInvaidChannel) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     ASSERT_EQ(0.0, audioBufferSet.getSample(kTestBufferChannels + 1, 0));
   }
 
   // Should return 0 if given an invalid index
   TEST_F(AudioBufferSetTest, getSampleNegativeIndex) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     ASSERT_EQ(0.0, audioBufferSet.getSample(0, -1));
   }
 
   // Should return 0 if given an invalid index
   TEST_F(AudioBufferSetTest, getSampleInvalidIndex) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     ASSERT_EQ(0.0, audioBufferSet.getSample(0, kTestBufferSize + 1));
   }
 
   TEST_F(AudioBufferSetTest, setSample) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
       for(BufferIndex j = 0; j < kTestBufferSize; ++j) {
         audioBufferSet.setSample(i, j, kTestSampleValue * (Sample)2.0);
@@ -109,7 +109,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setSampleNegativeChannel) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSample(-1, 0, 0.0);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -117,7 +117,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setSampleInvalidChannel) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSample(kTestBufferChannels + 1, 0, 0.0);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -125,7 +125,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setSampleNegativeIndex) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSample(0, -1, 0.0);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -133,7 +133,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setSampleInvalidIndex) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSample(0, kTestBufferSize + 1, 0.0);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -141,7 +141,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setNumChannelsToZero) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setNumChannels(0);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -149,7 +149,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setNumChannelsNegativeValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setNumChannels(-1);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -158,7 +158,7 @@ namespace plugincore {
   // buffer set, and with properly initialized data
   TEST_F(AudioBufferSetTest, setNumChannelsToGreaterValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setNumChannels(kTestBufferChannels + 1);
     ASSERT_EQ(kTestBufferChannels + 1, audioBufferSet.getNumChannels());
     AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
@@ -171,7 +171,7 @@ namespace plugincore {
   // Should truncate buffer set, but data should be preserved
   TEST_F(AudioBufferSetTest, setNumChannelsToSmallerValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setNumChannels(kTestBufferChannels + 1);
     ASSERT_EQ(kTestBufferChannels + 1, audioBufferSet.getNumChannels());
     AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
@@ -184,7 +184,7 @@ namespace plugincore {
   // Should expand size of all buffers in the set and initialize values beyond last sample to zero
   TEST_F(AudioBufferSetTest, setSizeToGreaterValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSize(kTestBufferSize * 2);
     ASSERT_EQ(kTestBufferSize * 2, audioBufferSet.getSize());
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
@@ -204,7 +204,7 @@ namespace plugincore {
   // Should truncate all samples in buffer set
   TEST_F(AudioBufferSetTest, setSizeToSmallerValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSize(kTestBufferSize / 2);
     ASSERT_EQ(kTestBufferSize / 2, audioBufferSet.getSize());
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
@@ -219,7 +219,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setSizeToZero) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSize(0);
     assertSampleDataEquals(audioBufferSet);
   }
@@ -227,7 +227,7 @@ namespace plugincore {
   // Should not segfault or reset object data
   TEST_F(AudioBufferSetTest, setSizeNegativeValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBuffers(sampleData, kTestBufferChannels, kTestBufferSize);
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setSize(-1);
     assertSampleDataEquals(audioBufferSet);
   }

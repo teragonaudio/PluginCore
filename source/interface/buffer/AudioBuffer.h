@@ -13,8 +13,8 @@ namespace plugincore {
     AudioBuffer();
     ~AudioBuffer();
     
-    const Sample* getBuffer() { return this->buffer; };
-    void setBuffer(Sample* value, const BufferIndex size);
+    const Sample* getBufferData() { return this->buffer; };
+    void setBufferData(Sample* value, const BufferIndex size);
 
     const Sample getSample(const BufferIndex index);
     void setSample(const BufferIndex index, const Sample value);

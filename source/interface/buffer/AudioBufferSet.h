@@ -10,8 +10,8 @@ namespace plugincore {
     ~AudioBufferSet();
     
     AudioBuffer* getBuffer(const BufferIndex channel) const { return NULL; };
-    const Sample** getBuffers() { return 0; };
-    void setBuffers(Sample** buffers, const BufferIndex numChannels, const BufferIndex size) {};
+    const Sample** getBufferData() { return 0; };
+    void setBufferData(Sample** buffers, const BufferIndex numChannels, const BufferIndex size) {};
 
     const Sample getSample(const BufferIndex channel, const BufferIndex index) { return 0.0; };
     void setSample(const BufferIndex channel, const BufferIndex index, const Sample value) {};

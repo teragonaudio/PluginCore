@@ -26,7 +26,7 @@ namespace plugincore {
   TEST_F(AudioBufferTest, createEmptyBuffer) {
     AudioBuffer audioBuffer;
     ASSERT_EQ(0, audioBuffer.getSize());
-    ASSERT_EQ(NULL, audioBuffer.getBuffer());
+    ASSERT_EQ(NULL, audioBuffer.getBufferData());
   }
 
   // This is the standard use-case scenario -- take an existing array of floating
@@ -34,10 +34,10 @@ namespace plugincore {
   // and contents of the returned buffer are correct.
   TEST_F(AudioBufferTest, setBuffer) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
 
     ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
-    const Sample* testData = audioBuffer.getBuffer();
+    const Sample* testData = audioBuffer.getBufferData();
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(sampleData[i], testData[i]);
     }
@@ -46,8 +46,8 @@ namespace plugincore {
   // Should not reset an object's buffer data and size
   TEST_F(AudioBufferTest, setBufferToNull) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
-    audioBuffer.setBuffer(NULL, 1);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(NULL, 1);
     ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
@@ -57,7 +57,7 @@ namespace plugincore {
   // Make sure that we can iterate over all samples in a buffer and that the value is correct
   TEST_F(AudioBufferTest, getSample) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
     }
@@ -66,7 +66,7 @@ namespace plugincore {
   // Should return 0 here, and definitely should NOT segfault or anything like that
   TEST_F(AudioBufferTest, getSampleBeyondBufferSize) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
     ASSERT_EQ(0.0, audioBuffer.getSample(kTestBufferSize + 1));
   }
 
@@ -74,7 +74,7 @@ namespace plugincore {
   // remain the same, but the size should reflect the new value.
   TEST_F(AudioBufferTest, setSizeSmaller) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
     audioBuffer.setSize(kTestBufferSize - 10);
     ASSERT_EQ(kTestBufferSize - 10, audioBuffer.getSize());
     for(BufferIndex i = 0; i < audioBuffer.getSize(); ++i) {
@@ -86,7 +86,7 @@ namespace plugincore {
   // remain untouched, but any samples added to the end of the buffer should be 0.
   TEST_F(AudioBufferTest, setSizeLarger) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
     audioBuffer.setSize(kTestBufferSize + 10);
     ASSERT_EQ(kTestBufferSize + 10, audioBuffer.getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
@@ -100,7 +100,7 @@ namespace plugincore {
   // Should not reset buffer or contents
   TEST_F(AudioBufferTest, setSizeToZero) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
     audioBuffer.setSize(0);
     ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
@@ -112,10 +112,10 @@ namespace plugincore {
   // object's data is preserved
   TEST_F(AudioBufferTest, setSizeToNegativeValue) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBuffer(sampleData, kTestBufferSize);
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
     audioBuffer.setSize(-1);
     ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
-    ASSERT_EQ(sampleData, audioBuffer.getBuffer());
+    ASSERT_EQ(sampleData, audioBuffer.getBufferData());
   }
 }
 }
