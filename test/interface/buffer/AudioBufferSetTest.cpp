@@ -61,10 +61,40 @@ namespace plugincore {
     }
   }
 
+  // Should set sample data, channels, size
   TEST_F(AudioBufferSetTest, getSample) {
     AudioBufferSet audioBufferSet;
     audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     assertSampleDataEquals(audioBufferSet);
+  }
+
+  // Should return valid audio buffers for each channel
+  TEST_F(AudioBufferSetTest, getBuffer) {
+    AudioBufferSet audioBufferSet;
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
+    for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
+      AudioBuffer* audioBuffer = audioBufferSet.getBuffer(i);
+      ASSERT_TRUE(audioBuffer != NULL);
+      for(BufferIndex j = 0; j < kTestBufferSize; ++j) {
+        ASSERT_EQ(kTestSampleValue, audioBuffer->getSample(j));
+      }
+    }
+  }
+
+  // Should return null pointer
+  TEST_F(AudioBufferSetTest, getBufferNegativeChannel) {
+    AudioBufferSet audioBufferSet;
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
+    AudioBuffer *audioBuffer = audioBufferSet.getBuffer(-1);
+    ASSERT_EQ(NULL, audioBuffer);
+  }
+
+  // Should return null pointer
+  TEST_F(AudioBufferSetTest, getBufferInvalidChannel) {
+    AudioBufferSet audioBufferSet;
+    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
+    AudioBuffer *audioBuffer = audioBufferSet.getBuffer(kTestBufferChannels + 1);
+    ASSERT_EQ(NULL, audioBuffer);
   }
 
   // Should return 0 if given an invalid channel
@@ -161,7 +191,18 @@ namespace plugincore {
     audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
     audioBufferSet.setNumChannels(kTestBufferChannels + 1);
     ASSERT_EQ(kTestBufferChannels + 1, audioBufferSet.getNumChannels());
+    
+    // All data in the other buffers should be unchanged
+    ASSERT_EQ(kTestBufferSize, audioBufferSet.getSize());
+    for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
+      for(BufferIndex j = 0; j < kTestBufferSize; ++j) {
+        ASSERT_EQ(sampleData[i][j], audioBufferSet.getSample(i, j));
+      }
+    }
+    
+    // Make sure that the new channel is properly zero-initialized
     AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
+    ASSERT_TRUE(resultBuffer != NULL);
     ASSERT_EQ(kTestBufferSize, resultBuffer->getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(0.0, resultBuffer->getSample(i));
@@ -175,6 +216,7 @@ namespace plugincore {
     audioBufferSet.setNumChannels(kTestBufferChannels + 1);
     ASSERT_EQ(kTestBufferChannels + 1, audioBufferSet.getNumChannels());
     AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
+    ASSERT_TRUE(resultBuffer != NULL);
     ASSERT_EQ(kTestBufferSize, resultBuffer->getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(0.0, resultBuffer->getSample(i));
@@ -196,6 +238,7 @@ namespace plugincore {
     ASSERT_EQ(kTestBufferSize * 2, audioBufferSet.getSize());
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
       AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
+      ASSERT_TRUE(resultBuffer != NULL);
       ASSERT_EQ(kTestBufferSize * 2, resultBuffer->getSize());
       // The first part of the buffer should be the same
       for(BufferIndex j = 0; j < kTestBufferSize; ++j) {

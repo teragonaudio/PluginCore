@@ -9,21 +9,22 @@ namespace plugincore {
     AudioBufferSet();
     ~AudioBufferSet();
     
-    AudioBuffer* getBuffer(const BufferIndex channel) const { return NULL; };
-    const Sample** getBufferData() { return 0; };
-    void setBufferData(Sample** buffers, const BufferIndex numChannels, const BufferIndex size) {};
+    AudioBuffer* getBuffer(const BufferIndex channel) const;
+    const Sample** getBufferData() const;
+    void setBufferData(Sample** value, const BufferIndex numChannels, const BufferIndex size);
 
-    const Sample getSample(const BufferIndex channel, const BufferIndex index) { return 0.0; };
-    void setSample(const BufferIndex channel, const BufferIndex index, const Sample value) {};
+    const Sample getSample(const BufferIndex channel, const BufferIndex index) const;
+    void setSample(const BufferIndex channel, const BufferIndex index, const Sample value);
     
-    const BufferIndex getNumChannels() const { return 0; };
-    void setNumChannels(const BufferIndex value) {};
+    const BufferIndex getNumChannels() const { return this->numChannels; };
+    void setNumChannels(const BufferIndex value);
 
-    const BufferIndex getSize() const { return 0; };
+    const BufferIndex getSize() const;
     void setSize(const BufferIndex value) {};
 
   private:
-    AudioBuffer* buffers;
+    AudioBuffer** buffers;
+    BufferIndex numChannels;
   };
 }
 }
