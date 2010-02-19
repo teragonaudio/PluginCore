@@ -106,8 +106,8 @@ namespace plugincore {
   TEST_F(AudioBufferTest, setSizeSmaller) {
     AudioBuffer audioBuffer;
     audioBuffer.setBufferData(sampleData, kTestBufferSize);
-    audioBuffer.setSize(kTestBufferSize - 10);
-    ASSERT_EQ(kTestBufferSize - 10, audioBuffer.getSize());
+    audioBuffer.setSize(kTestBufferSize / 2);
+    ASSERT_EQ(kTestBufferSize / 2, audioBuffer.getSize());
     for(BufferIndex i = 0; i < audioBuffer.getSize(); ++i) {
       ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
     }
@@ -120,13 +120,16 @@ namespace plugincore {
     // Use another data buffer which we can initialize to non-zero values
     Sample* dirtySampleData = new Sample[kTestBufferSize * 2];
     memset(dirtySampleData, 0xdeadbeef, kTestBufferSize * 2);
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      dirtySampleData[i] = kTestSampleValue;
+    }
     audioBuffer.setBufferData(dirtySampleData, kTestBufferSize);
     audioBuffer.setSize(kTestBufferSize * 2);
     ASSERT_EQ(kTestBufferSize * 2, audioBuffer.getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
     }
-    for(BufferIndex i = kTestBufferSize; i < 10; ++i) {
+    for(BufferIndex i = kTestBufferSize; i < kTestBufferSize * 2; ++i) {
       ASSERT_EQ(0, audioBuffer.getSample(kTestBufferSize + i));
     }
 
@@ -155,7 +158,9 @@ namespace plugincore {
     audioBuffer.setBufferData(sampleData, kTestBufferSize);
     audioBuffer.setSize(-1);
     ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
-    ASSERT_EQ(sampleData, audioBuffer.getBufferData());
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
+    }
   }
 }
 }
