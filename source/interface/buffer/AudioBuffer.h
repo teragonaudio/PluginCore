@@ -23,6 +23,8 @@ namespace plugincore {
     void setSize(const BufferIndex value);
 
   private:
+    void initializeBuffer(Sample* source, const BufferIndex sourceSize, const BufferIndex newSize);
+
     Sample* buffer;
     BufferIndex size;
 	};
