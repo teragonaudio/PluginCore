@@ -20,7 +20,7 @@ namespace plugincore {
     void setNumChannels(const BufferIndex value);
 
     const BufferIndex getSize() const;
-    void setSize(const BufferIndex value) {};
+    void setSize(const BufferIndex value);
 
   private:
     AudioBuffer** buffers;

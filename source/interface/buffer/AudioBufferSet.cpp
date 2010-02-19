@@ -68,6 +68,9 @@ namespace plugincore {
   }
 
   void AudioBufferSet::setSample(const BufferIndex channel, const BufferIndex index, const Sample value) {
+    if(channel >= 0 && channel < getNumChannels() && index >= 0 && index < getSize()) {
+      buffers[channel]->setSample(index, value);
+    }
   }
 
   void AudioBufferSet::setNumChannels(const BufferIndex value) {
@@ -98,6 +101,14 @@ namespace plugincore {
 
         buffers = newBuffers;
         delete [] oldBuffers;
+      }
+    }
+  }
+
+  void AudioBufferSet::setSize(const BufferIndex value) {
+    if(value > 0 && value != getSize()) {
+      for(BufferIndex i = 0; i < getNumChannels(); ++i) {
+        buffers[i]->setSize(value);
       }
     }
   }
