@@ -70,6 +70,37 @@ namespace plugincore {
     ASSERT_EQ(0.0, audioBuffer.getSample(kTestBufferSize + 1));
   }
 
+  // Should be able to set samples within the buffer
+  TEST_F(AudioBufferTest, setSample) {
+    AudioBuffer audioBuffer;
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
+
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      audioBuffer.setSample(i, kTestSampleValue * (Sample)2.0);
+      ASSERT_EQ(kTestSampleValue * 2.0, audioBuffer.getSample(i));
+    }
+  }
+
+  // Should not segfault or corrupt the object's data
+  TEST_F(AudioBufferTest, setSampleNegativeIndex) {
+    AudioBuffer audioBuffer;
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
+    audioBuffer.setSample(-1, 0.0);
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
+    }
+  }
+
+  // Should not segfault or corrupt the object's data
+  TEST_F(AudioBufferTest, setSampleInvalidIndex) {
+    AudioBuffer audioBuffer;
+    audioBuffer.setBufferData(sampleData, kTestBufferSize);
+    audioBuffer.setSample(kTestBufferSize + 1, 0.0);
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
+    }
+  }
+
   // Try setting the size of the buffer to a smaller value.  The data in the buffer should
   // remain the same, but the size should reflect the new value.
   TEST_F(AudioBufferTest, setSizeSmaller) {

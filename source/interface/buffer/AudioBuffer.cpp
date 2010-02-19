@@ -10,8 +10,8 @@ namespace plugincore {
   AudioBuffer::~AudioBuffer() {
   }
   
-  const Sample AudioBuffer::getSample(const BufferIndex index) {
-    if(index > 0 && index < this->size) {
+  const Sample AudioBuffer::getSample(const BufferIndex index) const {
+    if(index >= 0 && index < this->size) {
       return this->buffer[index];
     }
     else {
@@ -27,6 +27,9 @@ namespace plugincore {
   }
 
   void AudioBuffer::setSample(const BufferIndex index, const Sample value) {
+    if(index >= 0 && index < this->size) {
+      this->buffer[index] = value;
+    }
   }
 
   void AudioBuffer::setSize(const BufferIndex value) {
