@@ -117,14 +117,23 @@ namespace plugincore {
   // remain untouched, but any samples added to the end of the buffer should be 0.
   TEST_F(AudioBufferTest, setSizeLarger) {
     AudioBuffer audioBuffer;
-    audioBuffer.setBufferData(sampleData, kTestBufferSize);
-    audioBuffer.setSize(kTestBufferSize + 10);
-    ASSERT_EQ(kTestBufferSize + 10, audioBuffer.getSize());
+    // Use another data buffer which we can initialize to non-zero values
+    Sample* dirtySampleData = new Sample[kTestBufferSize * 2];
+    memset(dirtySampleData, 0xdeadbeef, kTestBufferSize * 2);
+    audioBuffer.setBufferData(dirtySampleData, kTestBufferSize);
+    audioBuffer.setSize(kTestBufferSize * 2);
+    ASSERT_EQ(kTestBufferSize * 2, audioBuffer.getSize());
     for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
       ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
     }
     for(BufferIndex i = kTestBufferSize; i < 10; ++i) {
       ASSERT_EQ(0, audioBuffer.getSample(kTestBufferSize + i));
+    }
+
+    // Also check the *raw* data, because getSample will return 0 if the index is larger than size
+    const Sample* resultData = audioBuffer.getBufferData();
+    for(BufferIndex i = kTestBufferSize; i < 10; ++i) {
+      ASSERT_EQ(0, resultData[kTestBufferSize + i]);
     }
   }
 

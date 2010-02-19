@@ -184,7 +184,14 @@ namespace plugincore {
   // Should expand size of all buffers in the set and initialize values beyond last sample to zero
   TEST_F(AudioBufferSetTest, setSizeToGreaterValue) {
     AudioBufferSet audioBufferSet;
-    audioBufferSet.setBufferData(sampleData, kTestBufferChannels, kTestBufferSize);
+    // Use another data buffer which we can initialize to non-zero values
+    Sample** dirtySampleData = new Sample*[kTestBufferChannels];
+    for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
+      dirtySampleData[i] = new Sample[kTestBufferSize * 2];
+      memset(dirtySampleData[i], 0xdeadbeef, kTestBufferSize * 2);
+    }
+    audioBufferSet.setBufferData(dirtySampleData, kTestBufferChannels, kTestBufferSize);
+
     audioBufferSet.setSize(kTestBufferSize * 2);
     ASSERT_EQ(kTestBufferSize * 2, audioBufferSet.getSize());
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
