@@ -231,13 +231,16 @@ namespace plugincore {
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
       dirtySampleData[i] = new Sample[kTestBufferSize * 2];
       memset(dirtySampleData[i], 0xdeadbeef, kTestBufferSize * 2);
+      for(BufferIndex j = 0; j < kTestBufferSize; ++j) {
+        dirtySampleData[i][j] = kTestSampleValue;
+      }
     }
     audioBufferSet.setBufferData(dirtySampleData, kTestBufferChannels, kTestBufferSize);
 
     audioBufferSet.setSize(kTestBufferSize * 2);
     ASSERT_EQ(kTestBufferSize * 2, audioBufferSet.getSize());
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
-      AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
+      AudioBuffer* resultBuffer = audioBufferSet.getBuffer(i);
       ASSERT_TRUE(resultBuffer != NULL);
       ASSERT_EQ(kTestBufferSize * 2, resultBuffer->getSize());
       // The first part of the buffer should be the same
@@ -258,7 +261,7 @@ namespace plugincore {
     audioBufferSet.setSize(kTestBufferSize / 2);
     ASSERT_EQ(kTestBufferSize / 2, audioBufferSet.getSize());
     for(BufferIndex i = 0; i < kTestBufferChannels; ++i) {
-      AudioBuffer* resultBuffer = audioBufferSet.getBuffer(kTestBufferChannels);
+      AudioBuffer* resultBuffer = audioBufferSet.getBuffer(i);
       ASSERT_EQ(kTestBufferSize / 2, resultBuffer->getSize());
       for(BufferIndex j = 0; j < kTestBufferSize / 2; ++j) {
         ASSERT_EQ(kTestSampleValue, resultBuffer->getSample(j));
