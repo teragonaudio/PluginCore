@@ -29,25 +29,29 @@ namespace plugincore {
     ASSERT_EQ(NULL, audioBuffer.getBuffer());
   }
 
-  // This is the standard use case scenario -- take an existing array of floating
+  // This is the standard use-case scenario -- take an existing array of floating
   // point values and push them into the buffer.  We should make sure that the size
-  // is correct and that the memory location of the buffer is identical to our test
-  // data array.
+  // and contents of the returned buffer are correct.
   TEST_F(AudioBufferTest, setBuffer) {
     AudioBuffer audioBuffer;
     audioBuffer.setBuffer(sampleData, kTestBufferSize);
 
     ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
-    ASSERT_EQ(sampleData, audioBuffer.getBuffer());
+    const Sample* testData = audioBuffer.getBuffer();
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      ASSERT_EQ(sampleData[i], testData[i]);
+    }
   }
 
-  // Should reset an object's buffer data and the size to 0
+  // Should not reset an object's buffer data and size
   TEST_F(AudioBufferTest, setBufferToNull) {
     AudioBuffer audioBuffer;
     audioBuffer.setBuffer(sampleData, kTestBufferSize);
     audioBuffer.setBuffer(NULL, 1);
-    ASSERT_EQ(NULL, audioBuffer.getBuffer());
-    ASSERT_EQ(0, audioBuffer.getSize());
+    ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
+    }
   }
 
   // Make sure that we can iterate over all samples in a buffer and that the value is correct
@@ -66,7 +70,7 @@ namespace plugincore {
     ASSERT_EQ(0.0, audioBuffer.getSample(kTestBufferSize + 1));
   }
 
-  // Try resetting the size of the buffer to a smaller value.  The data in the buffer should
+  // Try setting the size of the buffer to a smaller value.  The data in the buffer should
   // remain the same, but the size should reflect the new value.
   TEST_F(AudioBufferTest, setSizeSmaller) {
     AudioBuffer audioBuffer;
@@ -93,14 +97,15 @@ namespace plugincore {
     }
   }
 
-  // Should basically reset the buffer.  If there is existing data in the buffer, then it should
-  // be set to null
+  // Should not reset buffer or contents
   TEST_F(AudioBufferTest, setSizeToZero) {
     AudioBuffer audioBuffer;
     audioBuffer.setBuffer(sampleData, kTestBufferSize);
     audioBuffer.setSize(0);
-    ASSERT_EQ(0, audioBuffer.getSize());
-    ASSERT_EQ(NULL, audioBuffer.getBuffer());
+    ASSERT_EQ(kTestBufferSize, audioBuffer.getSize());
+    for(BufferIndex i = 0; i < kTestBufferSize; ++i) {
+      ASSERT_EQ(kTestSampleValue, audioBuffer.getSample(i));
+    }
   }
 
   // Obviously should not be permitted.  In this case we should also check to see that the
