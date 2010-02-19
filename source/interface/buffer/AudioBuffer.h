@@ -8,6 +8,7 @@ namespace plugincore {
   typedef float Sample;
   typedef long BufferIndex;
   
+  /** Class which represents a single channel of floating-point audio data */
 	class AudioBuffer {
   public:
     AudioBuffer();

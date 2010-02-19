@@ -4,6 +4,7 @@
 
 namespace teragon {
 namespace plugincore {
+  /** Container class for multiple audio buffers */
   class AudioBufferSet {
   public:
     AudioBufferSet();

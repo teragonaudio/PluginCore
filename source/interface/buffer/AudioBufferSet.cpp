@@ -56,6 +56,7 @@ namespace plugincore {
 
   void AudioBufferSet::setBufferData(Sample** value, const BufferIndex numChannels, const BufferIndex size) {
     if(numChannels > 0 && size > 0) {
+      // Clear out any existing data and reinitialize
       delete [] buffers;
       this->numChannels = numChannels;
       buffers = new AudioBuffer*[numChannels];
@@ -74,6 +75,8 @@ namespace plugincore {
   }
 
   void AudioBufferSet::setNumChannels(const BufferIndex value) {
+    // Make sure that the new channel count is positive and not equal to the current
+    // channel count in order to save resizing
     if(value > 0 && value != getNumChannels()) {
       BufferIndex oldNumChannels = getNumChannels();
       this->numChannels = value;
@@ -83,7 +86,8 @@ namespace plugincore {
           delete buffers[i];
         }
       }
-      // If the new value is larger, then initialize extra channels
+      // If the new value is larger, then initialize any channels and copy the old channels
+      // into the new channels buffer
       else {
         AudioBuffer** oldBuffers = buffers;
         AudioBuffer** newBuffers = new AudioBuffer*[this->numChannels];
@@ -99,6 +103,7 @@ namespace plugincore {
           }
         }
 
+        // Delete old channel buffers array
         buffers = newBuffers;
         delete [] oldBuffers;
       }
