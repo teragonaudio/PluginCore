@@ -2,6 +2,7 @@
 #include "wrapper/PluginLoaderWindows.h"
 #endif
 
+#if WINDOWS
 #include <Windows.h>
 #include <string>
 
@@ -54,3 +55,4 @@ namespace plugincore {
   }
 }
 }
+#endif

@@ -1,6 +1,7 @@
 #include "wrapper/PluginLoaderWindows.h"
 #include "gtest/gtest.h"
 
+#if WINDOWS
 namespace teragon {
 namespace plugincore {
   class PluginLoaderWindowsMock : public PluginLoaderWindows {
@@ -21,3 +22,4 @@ namespace plugincore {
   }
 }
 }
+#endif
