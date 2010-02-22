@@ -4,7 +4,7 @@
 #include <string>
 
 #ifndef __Plugin_h__
-#include "interface/plugin/Plugin.h"
+#include "plugincore/plugin/Plugin.h"
 #endif
 
 namespace teragon {

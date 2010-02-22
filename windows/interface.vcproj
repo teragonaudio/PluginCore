@@ -150,19 +150,19 @@
 				Name="buffer"
 				>
 				<File
-					RelativePath="..\source\interface\buffer\AudioBuffer.cpp"
+					RelativePath="..\source\plugincore\buffer\AudioBuffer.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\source\interface\buffer\AudioBuffer.h"
+					RelativePath="..\source\plugincore\buffer\AudioBuffer.h"
 					>
 				</File>
 				<File
-					RelativePath="..\source\interface\buffer\AudioBufferSet.cpp"
+					RelativePath="..\source\plugincore\buffer\AudioBufferSet.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\source\interface\buffer\AudioBufferSet.h"
+					RelativePath="..\source\plugincore\buffer\AudioBufferSet.h"
 					>
 				</File>
 			</Filter>
@@ -170,7 +170,7 @@
 				Name="plugin"
 				>
 				<File
-					RelativePath="..\source\interface\plugin\Plugin.h"
+					RelativePath="..\source\plugincore\plugin\Plugin.h"
 					>
 				</File>
 			</Filter>

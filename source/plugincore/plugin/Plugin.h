@@ -2,7 +2,7 @@
 #define __Plugin_h__
 
 #ifndef __AudioBufferSet_h__
-#include "interface/buffer/AudioBufferSet.h"
+#include "plugincore/buffer/AudioBufferSet.h"
 #endif
 
 namespace teragon {

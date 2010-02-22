@@ -1,4 +1,4 @@
-#include "interface/buffer/AudioBuffer.h"
+#include "plugincore/buffer/AudioBuffer.h"
 #include "gtest/gtest.h"
 
 namespace teragon {
