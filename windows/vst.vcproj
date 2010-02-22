@@ -19,7 +19,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="$(SolutionDir)\build\$(ConfigurationName)"
-			IntermediateDirectory="build\$(ConfigurationName)"
+			IntermediateDirectory="$(OutDir)"
 			ConfigurationType="2"
 			CharacterSet="1"
 			>
@@ -63,6 +63,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="2"
+				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
 				ModuleDefinitionFile="VstWrapper.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -93,7 +94,7 @@
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)\build\$(ConfigurationName)"
-			IntermediateDirectory="build\$(ConfigurationName)"
+			IntermediateDirectory="$(OutDir)"
 			ConfigurationType="2"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
@@ -138,6 +139,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="1"
+				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
 				ModuleDefinitionFile="VstWrapper.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -171,60 +173,6 @@
 	<References>
 	</References>
 	<Files>
-		<Filter
-			Name="VST Source"
-			>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Source"
-			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
-			>
-			<File
-				RelativePath="..\source\wrapper\PluginLoader.h"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\PluginLoaderWindows.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\PluginLoaderWindows.h"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\VstWrapper.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\VstWrapper.h"
-				>
-			</File>
-		</Filter>
 		<Filter
 			Name="Resources"
 			>
