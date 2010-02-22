@@ -36,6 +36,8 @@ namespace plugincore {
     long ret;
     ret = RegOpenKeyExA(HKEY_LOCAL_MACHINE, location, 0, KEY_QUERY_VALUE, &key);
     if( ret != ERROR_SUCCESS ){
+      TCHAR error_msg[1024];
+      FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, ret,  0, error_msg, 1024, NULL);
         return std::string();
     }
     ret = RegQueryValueExA(key, keyName, 0, 0, (LPBYTE) value, &bufLen);

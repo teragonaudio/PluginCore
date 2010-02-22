@@ -6,7 +6,7 @@
 #endif
 
 #ifndef DEFAULT_REGISTRY_LOCATION
-#define kDefaultRegistryLocation "HKEY_LOCAL_MACHINE\\SOFTWARE\\Teragon Audio\\PluginCore"
+#define kDefaultRegistryLocation "SOFTWARE\\Teragon Audio\\PluginCore"
 #endif
 
 namespace teragon {
