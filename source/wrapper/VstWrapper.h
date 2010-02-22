@@ -6,7 +6,7 @@
 #endif
 
 #ifndef __Plugin_h__
-#include "plugin/Plugin.h"
+#include "interface/plugin/Plugin.h"
 #endif
 
 namespace teragon {
