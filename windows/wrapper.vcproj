@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;"
 				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -105,7 +105,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;"
 				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
@@ -158,42 +158,6 @@
 			</File>
 			<File
 				RelativePath="..\source\wrapper\PluginLoaderWindows.h"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\VstWrapper.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\VstWrapper.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="VST Source"
-			>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp"
 				>
 			</File>
 		</Filter>
