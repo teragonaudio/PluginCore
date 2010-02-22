@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C++ Express 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wrapper", "windows\wrapper.vcproj", "{34BA9737-80B1-433C-8F18-027D415FA2A6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interface", "windows\interface.vcproj", "{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "windows\test.vcproj", "{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081} = {3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interface", "windows\interface.vcproj", "{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "windows\test.vcproj", "{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vst", "windows\vst.vcproj", "{34BA9737-80B1-433C-8F18-027D415FA2A6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081} = {3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}
 	EndProjectSection
@@ -19,10 +19,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.ActiveCfg = Debug|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.Build.0 = Debug|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.ActiveCfg = Release|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.Build.0 = Release|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Debug|Win32.ActiveCfg = Debug|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Debug|Win32.Build.0 = Debug|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Release|Win32.ActiveCfg = Release|Win32
@@ -31,6 +27,10 @@ Global
 		{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}.Debug|Win32.Build.0 = Debug|Win32
 		{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}.Release|Win32.ActiveCfg = Release|Win32
 		{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}.Release|Win32.Build.0 = Release|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.Build.0 = Debug|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.ActiveCfg = Release|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="wrapper"
+	Name="vst"
 	ProjectGUID="{34BA9737-80B1-433C-8F18-027D415FA2A6}"
 	RootNamespace="VstWrapper"
 	Keyword="Win32Proj"
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source\interface&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
 				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -117,7 +117,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source\interface&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
 				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
