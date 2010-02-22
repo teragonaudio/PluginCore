@@ -1,5 +1,5 @@
 #ifndef __PluginLoaderWindows_h__
-#include "PluginLoaderWindows.h"
+#include "wrapper/PluginLoaderWindows.h"
 #endif
 
 #include <Windows.h>

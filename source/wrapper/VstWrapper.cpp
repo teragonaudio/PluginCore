@@ -1,24 +1,24 @@
 #ifndef __VstWrapper_h__
-#include "VstWrapper.h"
+#include "wrapper/VstWrapper.h"
 #endif
 
 #ifndef __Plugin_h__
-#include "plugin/Plugin.h"
+#include "plugincore/plugin/Plugin.h"
 #endif
 
 #ifndef __PluginLoader_h__
-#include "PluginLoader.h"
+#include "wrapper/PluginLoader.h"
 #endif
 
 #if WINDOWS
 #ifndef __PluginLoaderWindows_h__
-#include "PluginLoaderWindows.h"
+#include "wrapper/PluginLoaderWindows.h"
 #endif
 #endif
 
 #if MAC
 #ifndef __PluginLoaderMac_h__
-#include "PluginLoaderMac.h"
+#include "wrapper/PluginLoaderMac.h"
 #endif
 #endif
 

@@ -1,5 +1,5 @@
 #ifndef __AudioBuffer_h__
-#include "AudioBuffer.h"
+#include "plugincore/buffer/AudioBuffer.h"
 #endif
 
 namespace teragon {
