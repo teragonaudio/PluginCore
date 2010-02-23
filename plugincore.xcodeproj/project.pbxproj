@@ -6,6 +6,24 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		242699321133FC1C00282ED1 /* all */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 242699461133FC5600282ED1 /* Build configuration list for PBXAggregateTarget "all" */;
+			buildPhases = (
+			);
+			dependencies = (
+				242699361133FC2200282ED1 /* PBXTargetDependency */,
+				242699381133FC2200282ED1 /* PBXTargetDependency */,
+				2426993A1133FC2200282ED1 /* PBXTargetDependency */,
+				2426993C1133FC2200282ED1 /* PBXTargetDependency */,
+				2426993E1133FC2200282ED1 /* PBXTargetDependency */,
+			);
+			name = all;
+			productName = all;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		2426982C113338A200282ED1 /* AudioBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24269803113337C200282ED1 /* AudioBuffer.cpp */; };
 		2426982D113338A200282ED1 /* AudioBufferSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24269805113337C200282ED1 /* AudioBufferSet.cpp */; };
@@ -22,6 +40,20 @@
 		242698C9113345D200282ED1 /* PluginLoaderWindows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426980B113337C200282ED1 /* PluginLoaderWindows.cpp */; };
 		242698ED1133484900282ED1 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698EC1133484900282ED1 /* libgtest.a */; };
 		242699021133489B00282ED1 /* libgtest_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699011133489B00282ED1 /* libgtest_main.a */; };
+		2426992E1133FBEC00282ED1 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
+		2426992F1133FBEC00282ED1 /* libwrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698131133380100282ED1 /* libwrapper.a */; };
+		242699681133FC9100282ED1 /* VstWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426980D113337C200282ED1 /* VstWrapper.cpp */; };
+		2426998A1134016A00282ED1 /* PkgInfo in Resources */ = {isa = PBXBuildFile; fileRef = 2426997D113400EC00282ED1 /* PkgInfo */; };
+		24269990113402A400282ED1 /* vst.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2426998F113402A400282ED1 /* vst.plist */; };
+		242699A2113404C500282ED1 /* aeffeditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2426999C113404C500282ED1 /* aeffeditor.h */; };
+		242699A3113404C500282ED1 /* audioeffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426999D113404C500282ED1 /* audioeffect.cpp */; };
+		242699A4113404C500282ED1 /* audioeffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 2426999E113404C500282ED1 /* audioeffect.h */; };
+		242699A5113404C500282ED1 /* audioeffectx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426999F113404C500282ED1 /* audioeffectx.cpp */; };
+		242699A6113404C500282ED1 /* audioeffectx.h in Headers */ = {isa = PBXBuildFile; fileRef = 242699A0113404C500282ED1 /* audioeffectx.h */; };
+		242699A7113404C500282ED1 /* vstplugmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 242699A1113404C500282ED1 /* vstplugmain.cpp */; };
+		24269B681134079F00282ED1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699C01134074000282ED1 /* ApplicationServices.framework */; };
+		24269B691134079F00282ED1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699BB1134070400282ED1 /* Carbon.framework */; };
+		24269B6A1134079F00282ED1 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699B8113406ED00282ED1 /* QuickTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,36 +61,85 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
+			remoteGlobalIDString = 242698281133389100282ED1;
 			remoteInfo = interface;
 		};
 		2426989D1133447400282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 242698121133380100282ED1 /* wrapper */;
+			remoteGlobalIDString = 242698121133380100282ED1;
 			remoteInfo = wrapper;
 		};
 		2426989F1133447800282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
+			remoteGlobalIDString = 242698281133389100282ED1;
 			remoteInfo = interface;
 		};
 		242698AA113344AE00282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
+			remoteGlobalIDString = 242698281133389100282ED1;
 			remoteInfo = interface;
 		};
 		242698AC113344AE00282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
+			remoteGlobalIDString = 242698121133380100282ED1;
+			remoteInfo = wrapper;
+		};
+		2426992A1133FBE700282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
+			remoteInfo = interface;
+		};
+		2426992C1133FBE700282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
 			remoteGlobalIDString = 242698121133380100282ED1 /* wrapper */;
 			remoteInfo = wrapper;
+		};
+		242699351133FC2200282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
+			remoteInfo = interface;
+		};
+		242699371133FC2200282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698A5113344A600282ED1 /* test */;
+			remoteInfo = test;
+		};
+		242699391133FC2200282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698991133446C00282ED1 /* vst */;
+			remoteInfo = vst;
+		};
+		2426993B1133FC2200282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698121133380100282ED1 /* wrapper */;
+			remoteInfo = wrapper;
+		};
+		2426993D1133FC2200282ED1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242699261133FBDA00282ED1 /* au */;
+			remoteInfo = au;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,13 +158,25 @@
 		242698291133389100282ED1 /* libinterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698301133397100282ED1 /* PluginLoaderMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginLoaderMac.h; sourceTree = "<group>"; };
 		242698311133397100282ED1 /* PluginLoaderMac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginLoaderMac.cpp; sourceTree = "<group>"; };
-		2426989A1133446C00282ED1 /* libvst.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libvst.dylib; path = build/Debug/libvst.dylib; sourceTree = "<group>"; };
+		2426989A1133446C00282ED1 /* vst. */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = vst.; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698A6113344A600282ED1 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698BA1133454300282ED1 /* AudioBufferSetTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferSetTest.cpp; sourceTree = "<group>"; };
 		242698BB1133454300282ED1 /* AudioBufferTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferTest.cpp; sourceTree = "<group>"; };
 		242698BD1133454300282ED1 /* PluginLoaderWindowsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginLoaderWindowsTest.cpp; sourceTree = "<group>"; };
 		242698EC1133484900282ED1 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = "third-party/gtest/lib/libgtest.a"; sourceTree = "<group>"; };
 		242699011133489B00282ED1 /* libgtest_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest_main.a; path = "third-party/gtest/lib/libgtest_main.a"; sourceTree = "<group>"; };
+		242699271133FBDA00282ED1 /* libau.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libau.dylib; path = build/Debug/libau.dylib; sourceTree = "<group>"; };
+		2426997D113400EC00282ED1 /* PkgInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PkgInfo; path = mac/PkgInfo; sourceTree = "<group>"; };
+		2426998F113402A400282ED1 /* vst.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = vst.plist; path = mac/vst.plist; sourceTree = "<group>"; };
+		2426999C113404C500282ED1 /* aeffeditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aeffeditor.h; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h"; sourceTree = "<group>"; };
+		2426999D113404C500282ED1 /* audioeffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioeffect.cpp; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.cpp"; sourceTree = "<group>"; };
+		2426999E113404C500282ED1 /* audioeffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audioeffect.h; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.h"; sourceTree = "<group>"; };
+		2426999F113404C500282ED1 /* audioeffectx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioeffectx.cpp; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.cpp"; sourceTree = "<group>"; };
+		242699A0113404C500282ED1 /* audioeffectx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audioeffectx.h; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.h"; sourceTree = "<group>"; };
+		242699A1113404C500282ED1 /* vstplugmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vstplugmain.cpp; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/vstplugmain.cpp"; sourceTree = "<group>"; };
+		242699B8113406ED00282ED1 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
+		242699BB1134070400282ED1 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		242699C01134074000282ED1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +199,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24269B681134079F00282ED1 /* ApplicationServices.framework in Frameworks */,
+				24269B691134079F00282ED1 /* Carbon.framework in Frameworks */,
 				242698A11133447E00282ED1 /* libinterface.a in Frameworks */,
 				242698A21133447E00282ED1 /* libwrapper.a in Frameworks */,
+				24269B6A1134079F00282ED1 /* QuickTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,17 +218,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		242699251133FBDA00282ED1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2426992E1133FBEC00282ED1 /* libinterface.a in Frameworks */,
+				2426992F1133FBEC00282ED1 /* libwrapper.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		08FB7794FE84155DC02AAC07 /* plugincore */ = {
 			isa = PBXGroup;
 			children = (
+				242699301133FBFF00282ED1 /* libs */,
 				242698231133381000282ED1 /* products */,
+				242699791134009300282ED1 /* resources */,
 				24269800113337C200282ED1 /* source */,
 				242698B71133454300282ED1 /* test */,
-				242698EC1133484900282ED1 /* libgtest.a */,
-				242699011133489B00282ED1 /* libgtest_main.a */,
+				2426999B113404AA00282ED1 /* vst sdk */,
 			);
 			name = plugincore;
 			sourceTree = "<group>";
@@ -191,9 +297,10 @@
 		242698231133381000282ED1 /* products */ = {
 			isa = PBXGroup;
 			children = (
+				242699271133FBDA00282ED1 /* libau.dylib */,
 				242698291133389100282ED1 /* libinterface.a */,
 				242698131133380100282ED1 /* libwrapper.a */,
-				2426989A1133446C00282ED1 /* libvst.dylib */,
+				2426989A1133446C00282ED1 /* vst. */,
 				242698A6113344A600282ED1 /* test */,
 			);
 			name = products;
@@ -233,6 +340,40 @@
 			path = wrapper;
 			sourceTree = "<group>";
 		};
+		242699301133FBFF00282ED1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				242699C01134074000282ED1 /* ApplicationServices.framework */,
+				242699BB1134070400282ED1 /* Carbon.framework */,
+				242698EC1133484900282ED1 /* libgtest.a */,
+				242699011133489B00282ED1 /* libgtest_main.a */,
+				242699B8113406ED00282ED1 /* QuickTime.framework */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		242699791134009300282ED1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2426997D113400EC00282ED1 /* PkgInfo */,
+				2426998F113402A400282ED1 /* vst.plist */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		2426999B113404AA00282ED1 /* vst sdk */ = {
+			isa = PBXGroup;
+			children = (
+				2426999C113404C500282ED1 /* aeffeditor.h */,
+				2426999D113404C500282ED1 /* audioeffect.cpp */,
+				2426999E113404C500282ED1 /* audioeffect.h */,
+				2426999F113404C500282ED1 /* audioeffectx.cpp */,
+				242699A0113404C500282ED1 /* audioeffectx.h */,
+				242699A1113404C500282ED1 /* vstplugmain.cpp */,
+			);
+			name = "vst sdk";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -252,6 +393,16 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		242698961133446C00282ED1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				242699A2113404C500282ED1 /* aeffeditor.h in Headers */,
+				242699A4113404C500282ED1 /* audioeffect.h in Headers */,
+				242699A6113404C500282ED1 /* audioeffectx.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		242699231133FBDA00282ED1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,6 +454,7 @@
 				242698961133446C00282ED1 /* Headers */,
 				242698971133446C00282ED1 /* Sources */,
 				242698981133446C00282ED1 /* Frameworks */,
+				2426998E1134016F00282ED1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -312,7 +464,7 @@
 			);
 			name = vst;
 			productName = vst;
-			productReference = 2426989A1133446C00282ED1 /* libvst.dylib */;
+			productReference = 2426989A1133446C00282ED1 /* vst. */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		242698A5113344A600282ED1 /* test */ = {
@@ -333,6 +485,25 @@
 			productReference = 242698A6113344A600282ED1 /* test */;
 			productType = "com.apple.product-type.tool";
 		};
+		242699261133FBDA00282ED1 /* au */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 242699311133FBFF00282ED1 /* Build configuration list for PBXNativeTarget "au" */;
+			buildPhases = (
+				242699231133FBDA00282ED1 /* Headers */,
+				242699241133FBDA00282ED1 /* Sources */,
+				242699251133FBDA00282ED1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2426992B1133FBE700282ED1 /* PBXTargetDependency */,
+				2426992D1133FBE700282ED1 /* PBXTargetDependency */,
+			);
+			name = au;
+			productName = au;
+			productReference = 242699271133FBDA00282ED1 /* libau.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -349,6 +520,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				242699321133FC1C00282ED1 /* all */,
+				242699261133FBDA00282ED1 /* au */,
 				242698281133389100282ED1 /* interface */,
 				242698A5113344A600282ED1 /* test */,
 				242698991133446C00282ED1 /* vst */,
@@ -356,6 +529,18 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2426998E1134016F00282ED1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2426998A1134016A00282ED1 /* PkgInfo in Resources */,
+				24269990113402A400282ED1 /* vst.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		242698101133380100282ED1 /* Sources */ = {
@@ -380,6 +565,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242699681133FC9100282ED1 /* VstWrapper.cpp in Sources */,
+				242699A3113404C500282ED1 /* audioeffect.cpp in Sources */,
+				242699A5113404C500282ED1 /* audioeffectx.cpp in Sources */,
+				242699A7113404C500282ED1 /* vstplugmain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +579,13 @@
 				242698BE1133454300282ED1 /* AudioBufferSetTest.cpp in Sources */,
 				242698BF1133454300282ED1 /* AudioBufferTest.cpp in Sources */,
 				242698C01133454300282ED1 /* PluginLoaderWindowsTest.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		242699241133FBDA00282ED1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +616,41 @@
 			isa = PBXTargetDependency;
 			target = 242698121133380100282ED1 /* wrapper */;
 			targetProxy = 242698AC113344AE00282ED1 /* PBXContainerItemProxy */;
+		};
+		2426992B1133FBE700282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698281133389100282ED1 /* interface */;
+			targetProxy = 2426992A1133FBE700282ED1 /* PBXContainerItemProxy */;
+		};
+		2426992D1133FBE700282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698121133380100282ED1 /* wrapper */;
+			targetProxy = 2426992C1133FBE700282ED1 /* PBXContainerItemProxy */;
+		};
+		242699361133FC2200282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698281133389100282ED1 /* interface */;
+			targetProxy = 242699351133FC2200282ED1 /* PBXContainerItemProxy */;
+		};
+		242699381133FC2200282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698A5113344A600282ED1 /* test */;
+			targetProxy = 242699371133FC2200282ED1 /* PBXContainerItemProxy */;
+		};
+		2426993A1133FC2200282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698991133446C00282ED1 /* vst */;
+			targetProxy = 242699391133FC2200282ED1 /* PBXContainerItemProxy */;
+		};
+		2426993C1133FC2200282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698121133380100282ED1 /* wrapper */;
+			targetProxy = 2426993B1133FC2200282ED1 /* PBXContainerItemProxy */;
+		};
+		2426993E1133FC2200282ED1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242699261133FBDA00282ED1 /* au */;
+			targetProxy = 2426993D1133FC2200282ED1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -519,31 +750,38 @@
 		2426989B1133446D00282ED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				EXECUTABLE_PREFIX = lib;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				EXECUTABLE_EXTENSION = "";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INSTALL_PATH = /usr/local/lib;
-				PREBINDING = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					./source,
+					"./third-party/vstsdk2.4",
+					"./third-party/vstsdk2.4/public.sdk/source/vst2.x",
+				);
+				INFOPLIST_FILE = "./mac/vst-info.plist";
 				PRODUCT_NAME = vst;
+				WRAPPER_EXTENSION = vst;
 			};
 			name = Debug;
 		};
 		2426989C1133446D00282ED1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EXECUTABLE_PREFIX = lib;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				EXECUTABLE_EXTENSION = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = /usr/local/lib;
-				PREBINDING = NO;
+				HEADER_SEARCH_PATHS = (
+					./source,
+					"./third-party/vstsdk2.4",
+					"./third-party/vstsdk2.4/public.sdk/source/vst2.x",
+				);
+				INFOPLIST_FILE = "./mac/vst-info.plist";
 				PRODUCT_NAME = vst;
+				WRAPPER_EXTENSION = vst;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -594,6 +832,59 @@
 			};
 			name = Release;
 		};
+		242699281133FBDB00282ED1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = au;
+			};
+			name = Debug;
+		};
+		242699291133FBDB00282ED1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = au;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		242699331133FC1D00282ED1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = all;
+			};
+			name = Debug;
+		};
+		242699341133FC1D00282ED1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = all;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -638,6 +929,24 @@
 			buildConfigurations = (
 				242698A8113344A600282ED1 /* Debug */,
 				242698A9113344A600282ED1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		242699311133FBFF00282ED1 /* Build configuration list for PBXNativeTarget "au" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				242699281133FBDB00282ED1 /* Debug */,
+				242699291133FBDB00282ED1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		242699461133FC5600282ED1 /* Build configuration list for PBXAggregateTarget "all" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				242699331133FC1D00282ED1 /* Debug */,
+				242699341133FC1D00282ED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
