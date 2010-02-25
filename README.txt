@@ -8,4 +8,5 @@ This project is hosted at the following addresses:
 
 Project Page: http://www.teragon.org/p/PluginCore.html
 Source Code: http://www.github.com/teragonaudio/plugincore
+Documentation and Wiki: http://wiki.github.com/teragonaudio/plugincore
 Issue Tracker: http://teragonaudio.lighthouseapp.com/projects/47371-plugincore
