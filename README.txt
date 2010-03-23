@@ -7,6 +7,6 @@ PluginCore contains two components: the actual plugin interface, and wrapper plu
 This project is hosted at the following addresses:
 
 Project Page: http://www.teragon.org/p/PluginCore.html
-Source Code: http://www.github.com/teragonaudio/plugincore
-Documentation and Wiki: http://wiki.github.com/teragonaudio/plugincore
+Source Code: http://www.github.com/teragonaudio/PluginCore
+Documentation and Wiki: http://wiki.github.com/teragonaudio/PluginCore
 Issue Tracker: http://teragonaudio.lighthouseapp.com/projects/47371-plugincore
