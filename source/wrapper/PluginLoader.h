@@ -7,6 +7,10 @@
 #include "plugincore/plugin/Plugin.h"
 #endif
 
+#ifndef PLUGIN_LOCATION
+#define PLUGIN_LOCATION ""
+#endif
+
 namespace teragon {
 namespace plugincore {
   class PluginLoader {

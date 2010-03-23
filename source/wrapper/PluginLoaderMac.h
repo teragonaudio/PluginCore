@@ -15,10 +15,10 @@ namespace plugincore {
     Plugin* load();
     
   private:
-    Plugin* loadFromDirectory(const char* pluginPath);
+    Plugin* loadFromDirectory(std::string pluginPath);
     
-    const char* getVstDirectory(const char* rootSearchPath);
-    const char* getHomeDirectory();
+    std::string getVstDirectory(std::string rootSearchPath);
+    std::string getHomeDirectory();
   };
 }
 }

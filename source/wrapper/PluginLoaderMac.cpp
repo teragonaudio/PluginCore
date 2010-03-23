@@ -13,25 +13,33 @@ namespace teragon {
     Plugin* PluginLoaderMac::load() {
       Plugin* result = NULL;
       
-      // First try loading from the root directory, and then from the user's home directory
-      result = loadFromDirectory(getVstDirectory("/"));
+      // First try loading from the root directory, then from the user's home directory,
+      // and then from the location defined in PLUGIN_LOCATION, which may be overridden
+      // in your build settings
+      result = loadFromDirectory(getVstDirectory(NULL));
       if(result == NULL) {
         result = loadFromDirectory(getVstDirectory(getHomeDirectory()));
+        if(result == NULL) {
+          result = loadFromDirectory(PLUGIN_LOCATION);
+        }
       }
       
       return result;
     }
     
-    Plugin* PluginLoaderMac::loadFromDirectory(const char* pluginPath) {
+    Plugin* PluginLoaderMac::loadFromDirectory(std::string pluginPath) {
       return NULL;
     }
     
-    const char* PluginLoaderMac::getVstDirectory(const char* rootSearchPath) {
-      return NULL;
+    std::string PluginLoaderMac::getVstDirectory(std::string rootSearchPath) {
+      if(rootSearchPath.empty()) {
+        rootSearchPath = "";
+      }
+      return rootSearchPath.append("/Library/Plug-Ins/VST");
     }
     
-    const char* PluginLoaderMac::getHomeDirectory() {
-      return NULL;
+    std::string PluginLoaderMac::getHomeDirectory() {
+      return getenv("HOME");
     }
   }
 }
