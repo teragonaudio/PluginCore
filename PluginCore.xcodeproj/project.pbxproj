@@ -300,6 +300,7 @@
 		2493544511343600000BF241 /* AudioUnitWrapper.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; name = AudioUnitWrapper.exp; path = mac/AudioUnitWrapper.exp; sourceTree = "<group>"; };
 		2493544B11343673000BF241 /* AudioUnitWrapper.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = AudioUnitWrapper.r; path = mac/AudioUnitWrapper.r; sourceTree = "<group>"; };
 		2493544D113436A2000BF241 /* AudioUnitWrapperVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioUnitWrapperVersion.h; path = mac/AudioUnitWrapperVersion.h; sourceTree = "<group>"; };
+		24A561BC1158C525005F03C2 /* PrefixMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixMac.h; path = mac/PrefixMac.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +499,7 @@
 				249350FF113431E4000BF241 /* AudioUnitWrapper.plist */,
 				2426998F113402A400282ED1 /* VstWrapper.plist */,
 				2493544B11343673000BF241 /* AudioUnitWrapper.r */,
+				24A561BC1158C525005F03C2 /* PrefixMac.h */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -797,7 +799,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 			};
-			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "plugincore" */;
+			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "PluginCore" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 08FB7794FE84155DC02AAC07 /* plugincore */;
@@ -988,6 +990,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./mac/PrefixMac.h;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ./source;
@@ -1001,6 +1005,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./mac/PrefixMac.h;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ./source;
@@ -1236,7 +1242,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "plugincore" */ = {
+		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "PluginCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91F008733DB70010E9CD /* Debug */,

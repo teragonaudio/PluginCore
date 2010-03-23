@@ -9,8 +9,16 @@ namespace teragon {
 namespace plugincore {
   class PluginLoaderMac : public PluginLoader {
   public:
-    PluginLoaderMac() : PluginLoader() {};
-    ~PluginLoaderMac() {};
+    PluginLoaderMac();
+    ~PluginLoaderMac();
+    
+    Plugin* load();
+    
+  private:
+    Plugin* loadFromDirectory(const char* pluginPath);
+    
+    const char* getVstDirectory(const char* rootSearchPath);
+    const char* getHomeDirectory();
   };
 }
 }
