@@ -40,6 +40,20 @@ namespace teragon {
     std::string PluginLoaderMac::getPluginLocationInBundleResources() {
       std::string result = "";
 
+      char* mylocation = getenv("PWD");
+      
+      CFArrayRef bundles = CFBundleGetAllBundles();
+      for(int i = 0; i < CFArrayGetCount(bundles); ++i) {
+        CFBundleRef bundle = (CFBundleRef)CFArrayGetValueAtIndex(bundles, i);
+        printf("GOT %d:", i);
+        if(bundle != NULL) {
+          CFStringRef bundleName = CFBundleGetIdentifier(bundle);
+          if(bundleName != NULL) {
+            printf("%s", CFStringGetCStringPtr(bundleName, kCFStringEncodingMacRoman));
+          }
+        }
+        printf("\n");
+      }
       CFBundleRef bundleRef = CFBundleGetBundleWithIdentifier(CFSTR("org.teragon.ExampleEffect.vst"));
       CFURLRef resourceDirectoryUrl = CFBundleCopyResourcesDirectoryURL(bundleRef);
       char resultBuffer[1024];
