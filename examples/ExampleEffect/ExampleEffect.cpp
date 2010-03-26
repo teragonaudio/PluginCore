@@ -11,6 +11,12 @@
 #include "ExampleEffect.h"
 #endif
 
+extern "C" {
+  teragon::plugincore::Plugin* createPlugin() {
+    return new teragon::ExampleEffect();
+  }
+};
+
 namespace teragon {
   ExampleEffect::ExampleEffect() : teragon::plugincore::Plugin() {
   }
@@ -22,5 +28,10 @@ namespace teragon {
   }
   
   void ExampleEffect::process(const teragon::plugincore::AudioBufferSet& inputs, teragon::plugincore::AudioBufferSet& outputs) {
+    for(int channel = 0; channel < inputs.getNumChannels(); ++channel) {
+      for(int frame = 0; frame < inputs.getSize(); ++frame) {
+        outputs.setSample(channel, frame, inputs.getSample(channel, frame));
+      }
+    }
   }
 }
