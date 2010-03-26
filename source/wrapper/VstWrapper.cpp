@@ -31,7 +31,8 @@ AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
 #endif
   teragon::plugincore::Plugin* plugin = pluginLoader->load();
   delete pluginLoader;
-  return new teragon::plugincore::VstWrapper(plugin, audioMaster);
+  
+  return (plugin != NULL) ? new teragon::plugincore::VstWrapper(plugin, audioMaster) : NULL;
 }
 
 namespace teragon {

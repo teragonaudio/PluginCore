@@ -2,6 +2,8 @@
 #include "PluginLoaderMac.h"
 #endif
 
+#include <dlfcn.h>
+
 namespace teragon {
   namespace plugincore {
     PluginLoaderMac::PluginLoaderMac() : PluginLoader() {
@@ -13,33 +15,39 @@ namespace teragon {
     Plugin* PluginLoaderMac::load() {
       Plugin* result = NULL;
       
-      // First try loading from the root directory, then from the user's home directory,
-      // and then from the location defined in PLUGIN_LOCATION, which may be overridden
-      // in your build settings
-      result = loadFromDirectory(getVstDirectory(NULL));
+      result = loadFromDirectory(getPluginLocationInBundleResources());
       if(result == NULL) {
-        result = loadFromDirectory(getVstDirectory(getHomeDirectory()));
-        if(result == NULL) {
-          result = loadFromDirectory(PLUGIN_LOCATION);
-        }
+        result = loadFromDirectory(PLUGIN_LOCATION);
       }
       
       return result;
     }
     
     Plugin* PluginLoaderMac::loadFromDirectory(std::string pluginPath) {
-      return NULL;
-    }
-    
-    std::string PluginLoaderMac::getVstDirectory(std::string rootSearchPath) {
-      if(rootSearchPath.empty()) {
-        rootSearchPath = "";
+      Plugin* result = NULL;
+      
+      void* dynamicLibraryHandle = dlopen(pluginPath.c_str(), RTLD_LAZY);
+      if(dynamicLibraryHandle != NULL) {
+        PluginEntryPoint* pluginEntryPoint = reinterpret_cast<PluginEntryPoint*>(dlsym(dynamicLibraryHandle, "createPlugin"));
+        if(pluginEntryPoint != NULL) {
+          result = pluginEntryPoint();
+        }
       }
-      return rootSearchPath.append("/Library/Plug-Ins/VST");
+      
+      return result;
     }
     
-    std::string PluginLoaderMac::getHomeDirectory() {
-      return getenv("HOME");
+    std::string PluginLoaderMac::getPluginLocationInBundleResources() {
+      std::string result = "";
+
+      CFBundleRef bundleRef = CFBundleGetBundleWithIdentifier(CFSTR("org.teragon.ExampleEffect.vst"));
+      CFURLRef resourceDirectoryUrl = CFBundleCopyResourcesDirectoryURL(bundleRef);
+      char resultBuffer[1024];
+      CFURLGetFileSystemRepresentation(resourceDirectoryUrl, true, (UInt8*)resultBuffer, 1024);
+      result.assign(resultBuffer);
+      result.append("/ExampleEffect.dylib");
+      
+      return result;
     }
   }
 }

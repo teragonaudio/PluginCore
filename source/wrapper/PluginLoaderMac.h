@@ -7,6 +7,8 @@
 
 namespace teragon {
 namespace plugincore {
+  typedef Plugin*(PluginEntryPoint)(void);
+  
   class PluginLoaderMac : public PluginLoader {
   public:
     PluginLoaderMac();
@@ -17,8 +19,7 @@ namespace plugincore {
   private:
     Plugin* loadFromDirectory(std::string pluginPath);
     
-    std::string getVstDirectory(std::string rootSearchPath);
-    std::string getHomeDirectory();
+    std::string getPluginLocationInBundleResources();
   };
 }
 }
