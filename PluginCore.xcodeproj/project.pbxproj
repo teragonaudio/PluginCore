@@ -14,10 +14,11 @@
 			);
 			dependencies = (
 				242699361133FC2200282ED1 /* PBXTargetDependency */,
+				2402EBDD115CC272003A58A9 /* PBXTargetDependency */,
 				242699381133FC2200282ED1 /* PBXTargetDependency */,
-				2426993A1133FC2200282ED1 /* PBXTargetDependency */,
 				2426993C1133FC2200282ED1 /* PBXTargetDependency */,
 				2426993E1133FC2200282ED1 /* PBXTargetDependency */,
+				2402EC45115CC794003A58A9 /* PBXTargetDependency */,
 			);
 			name = all;
 			productName = all;
@@ -25,13 +26,23 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2402EBF2115CC306003A58A9 /* ExampleEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2402EBD4115CC1ED003A58A9 /* ExampleEffect.cpp */; };
+		2402EC03115CC3CF003A58A9 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
+		2402EC48115CC7B1003A58A9 /* VstWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426980D113337C200282ED1 /* VstWrapper.cpp */; };
+		2402EC49115CC7B1003A58A9 /* audioeffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426999D113404C500282ED1 /* audioeffect.cpp */; };
+		2402EC4A115CC7B1003A58A9 /* audioeffectx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426999F113404C500282ED1 /* audioeffectx.cpp */; };
+		2402EC4B115CC7B1003A58A9 /* vstplugmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 242699A1113404C500282ED1 /* vstplugmain.cpp */; };
+		2402EC5B115CC7C1003A58A9 /* PkgInfo in Resources */ = {isa = PBXBuildFile; fileRef = 2426997D113400EC00282ED1 /* PkgInfo */; };
+		2402EE00115CC7CE003A58A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699C01134074000282ED1 /* ApplicationServices.framework */; };
+		2402EE01115CC7CE003A58A9 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699BB1134070400282ED1 /* Carbon.framework */; };
+		2402EE02115CC7CE003A58A9 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
+		2402EE03115CC7CE003A58A9 /* libwrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698131133380100282ED1 /* libwrapper.a */; };
+		2402EE04115CC7CE003A58A9 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699B8113406ED00282ED1 /* QuickTime.framework */; };
 		2426982C113338A200282ED1 /* AudioBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24269803113337C200282ED1 /* AudioBuffer.cpp */; };
 		2426982D113338A200282ED1 /* AudioBufferSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24269805113337C200282ED1 /* AudioBufferSet.cpp */; };
 		2426982E113338B600282ED1 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
 		242698321133397100282ED1 /* PluginLoaderMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 242698301133397100282ED1 /* PluginLoaderMac.h */; };
 		242698331133397100282ED1 /* PluginLoaderMac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 242698311133397100282ED1 /* PluginLoaderMac.cpp */; };
-		242698A11133447E00282ED1 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
-		242698A21133447E00282ED1 /* libwrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698131133380100282ED1 /* libwrapper.a */; };
 		242698AE113344B500282ED1 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
 		242698AF113344B500282ED1 /* libwrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698131133380100282ED1 /* libwrapper.a */; };
 		242698BE1133454300282ED1 /* AudioBufferSetTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 242698BA1133454300282ED1 /* AudioBufferSetTest.cpp */; };
@@ -42,21 +53,8 @@
 		242699021133489B00282ED1 /* libgtest_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699011133489B00282ED1 /* libgtest_main.a */; };
 		2426992E1133FBEC00282ED1 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
 		2426992F1133FBEC00282ED1 /* libwrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698131133380100282ED1 /* libwrapper.a */; };
-		242699681133FC9100282ED1 /* VstWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426980D113337C200282ED1 /* VstWrapper.cpp */; };
-		2426998A1134016A00282ED1 /* PkgInfo in Resources */ = {isa = PBXBuildFile; fileRef = 2426997D113400EC00282ED1 /* PkgInfo */; };
-		24269990113402A400282ED1 /* VstWrapper.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2426998F113402A400282ED1 /* VstWrapper.plist */; };
-		242699A2113404C500282ED1 /* aeffeditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2426999C113404C500282ED1 /* aeffeditor.h */; };
-		242699A3113404C500282ED1 /* audioeffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426999D113404C500282ED1 /* audioeffect.cpp */; };
-		242699A4113404C500282ED1 /* audioeffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 2426999E113404C500282ED1 /* audioeffect.h */; };
-		242699A5113404C500282ED1 /* audioeffectx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2426999F113404C500282ED1 /* audioeffectx.cpp */; };
-		242699A6113404C500282ED1 /* audioeffectx.h in Headers */ = {isa = PBXBuildFile; fileRef = 242699A0113404C500282ED1 /* audioeffectx.h */; };
-		242699A7113404C500282ED1 /* vstplugmain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 242699A1113404C500282ED1 /* vstplugmain.cpp */; };
-		24269B681134079F00282ED1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699C01134074000282ED1 /* ApplicationServices.framework */; };
-		24269B691134079F00282ED1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699BB1134070400282ED1 /* Carbon.framework */; };
-		24269B6A1134079F00282ED1 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699B8113406ED00282ED1 /* QuickTime.framework */; };
 		249350F71134312D000BF241 /* AudioUnitWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 249350F51134312D000BF241 /* AudioUnitWrapper.h */; };
 		249350F81134312D000BF241 /* AudioUnitWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 249350F61134312D000BF241 /* AudioUnitWrapper.cpp */; };
-		24935100113431E4000BF241 /* AudioUnitWrapper.plist in Resources */ = {isa = PBXBuildFile; fileRef = 249350FF113431E4000BF241 /* AudioUnitWrapper.plist */; };
 		249353AD1134337C000BF241 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699C01134074000282ED1 /* ApplicationServices.framework */; };
 		249353AE1134337C000BF241 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249351221134334E000BF241 /* AudioToolbox.framework */; };
 		249353AF1134337C000BF241 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2493511F1134332B000BF241 /* AudioUnit.framework */; };
@@ -119,21 +117,56 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2426988C1133436200282ED1 /* PBXContainerItemProxy */ = {
+		2402EBDC115CC272003A58A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 242698281133389100282ED1;
+			remoteGlobalIDString = 2402EBD8115CC255003A58A9 /* ExampleEffect */;
+			remoteInfo = ExampleEffect;
+		};
+		2402EBDE115CC28C003A58A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242699261133FBDA00282ED1 /* au */;
+			remoteInfo = au;
+		};
+		2402EBE0115CC28C003A58A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
 			remoteInfo = interface;
 		};
-		2426989D1133447400282ED1 /* PBXContainerItemProxy */ = {
+		2402EBE4115CC28C003A58A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 242698121133380100282ED1;
+			remoteGlobalIDString = 242698121133380100282ED1 /* wrapper */;
 			remoteInfo = wrapper;
 		};
-		2426989F1133447800282ED1 /* PBXContainerItemProxy */ = {
+		2402EC33115CC6D7003A58A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698281133389100282ED1 /* interface */;
+			remoteInfo = interface;
+		};
+		2402EC35115CC6D7003A58A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 242698121133380100282ED1 /* wrapper */;
+			remoteInfo = wrapper;
+		};
+		2402EC44115CC794003A58A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2402EC2D115CC6CF003A58A9 /* VstWrapper */;
+			remoteInfo = VstWrapper;
+		};
+		2426988C1133436200282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
@@ -182,13 +215,6 @@
 			remoteGlobalIDString = 242698A5113344A600282ED1;
 			remoteInfo = test;
 		};
-		242699391133FC2200282ED1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 242698991133446C00282ED1;
-			remoteInfo = vst;
-		};
 		2426993B1133FC2200282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -206,6 +232,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2402EBD3115CC1ED003A58A9 /* ExampleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleEffect.h; path = examples/ExampleEffect/ExampleEffect.h; sourceTree = SOURCE_ROOT; };
+		2402EBD4115CC1ED003A58A9 /* ExampleEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleEffect.cpp; path = examples/ExampleEffect/ExampleEffect.cpp; sourceTree = SOURCE_ROOT; };
+		2402EBD9115CC255003A58A9 /* libExampleEffect.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libExampleEffect.dylib; path = build/Debug/libExampleEffect.dylib; sourceTree = "<group>"; };
+		2402EC2E115CC6CF003A58A9 /* VstWrapper.vst */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VstWrapper.vst; path = build/Debug/VstWrapper.vst; sourceTree = "<group>"; };
+		2402EC3E115CC76D003A58A9 /* AudioUnitWrapper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AudioUnitWrapper-Info.plist"; path = "mac/AudioUnitWrapper-Info.plist"; sourceTree = "<group>"; };
+		2402EC3F115CC76D003A58A9 /* VstWrapper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "VstWrapper-Info.plist"; path = "mac/VstWrapper-Info.plist"; sourceTree = "<group>"; };
 		24269803113337C200282ED1 /* AudioBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBuffer.cpp; sourceTree = "<group>"; };
 		24269804113337C200282ED1 /* AudioBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBuffer.h; sourceTree = "<group>"; };
 		24269805113337C200282ED1 /* AudioBufferSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferSet.cpp; sourceTree = "<group>"; };
@@ -220,7 +252,6 @@
 		242698291133389100282ED1 /* libinterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698301133397100282ED1 /* PluginLoaderMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginLoaderMac.h; sourceTree = "<group>"; };
 		242698311133397100282ED1 /* PluginLoaderMac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginLoaderMac.cpp; sourceTree = "<group>"; };
-		2426989A1133446C00282ED1 /* vst. */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = vst.; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698A6113344A600282ED1 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698BA1133454300282ED1 /* AudioBufferSetTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferSetTest.cpp; sourceTree = "<group>"; };
 		242698BB1133454300282ED1 /* AudioBufferTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferTest.cpp; sourceTree = "<group>"; };
@@ -229,7 +260,6 @@
 		242699011133489B00282ED1 /* libgtest_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest_main.a; path = "third-party/gtest/lib/libgtest_main.a"; sourceTree = "<group>"; };
 		242699271133FBDA00282ED1 /* AudioUnitWrapper. */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = AudioUnitWrapper.; sourceTree = BUILT_PRODUCTS_DIR; };
 		2426997D113400EC00282ED1 /* PkgInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PkgInfo; path = mac/PkgInfo; sourceTree = "<group>"; };
-		2426998F113402A400282ED1 /* VstWrapper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = VstWrapper.plist; path = mac/VstWrapper.plist; sourceTree = "<group>"; };
 		2426999C113404C500282ED1 /* aeffeditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aeffeditor.h; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h"; sourceTree = "<group>"; };
 		2426999D113404C500282ED1 /* audioeffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = audioeffect.cpp; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.cpp"; sourceTree = "<group>"; };
 		2426999E113404C500282ED1 /* audioeffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = audioeffect.h; path = "third-party/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.h"; sourceTree = "<group>"; };
@@ -241,7 +271,6 @@
 		242699C01134074000282ED1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		249350F51134312D000BF241 /* AudioUnitWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioUnitWrapper.h; sourceTree = "<group>"; };
 		249350F61134312D000BF241 /* AudioUnitWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioUnitWrapper.cpp; sourceTree = "<group>"; };
-		249350FF113431E4000BF241 /* AudioUnitWrapper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AudioUnitWrapper.plist; path = mac/AudioUnitWrapper.plist; sourceTree = "<group>"; };
 		2493511F1134332B000BF241 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		249351221134334E000BF241 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2493512511343360000BF241 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -304,6 +333,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2402EBD7115CC255003A58A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2402EC03115CC3CF003A58A9 /* libinterface.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2402EC2C115CC6CF003A58A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2402EE00115CC7CE003A58A9 /* ApplicationServices.framework in Frameworks */,
+				2402EE01115CC7CE003A58A9 /* Carbon.framework in Frameworks */,
+				2402EE02115CC7CE003A58A9 /* libinterface.a in Frameworks */,
+				2402EE03115CC7CE003A58A9 /* libwrapper.a in Frameworks */,
+				2402EE04115CC7CE003A58A9 /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		242698111133380100282ED1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,18 +365,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		242698981133446C00282ED1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24269B681134079F00282ED1 /* ApplicationServices.framework in Frameworks */,
-				24269B691134079F00282ED1 /* Carbon.framework in Frameworks */,
-				242698A11133447E00282ED1 /* libinterface.a in Frameworks */,
-				242698A21133447E00282ED1 /* libwrapper.a in Frameworks */,
-				24269B6A1134079F00282ED1 /* QuickTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				249353C0113434D8000BF241 /* audiounit sdk */,
+				2402EBD1115CC1B0003A58A9 /* examples */,
 				242699301133FBFF00282ED1 /* libs */,
 				242698231133381000282ED1 /* products */,
 				242699791134009300282ED1 /* resources */,
@@ -373,6 +411,24 @@
 				2426999B113404AA00282ED1 /* vst sdk */,
 			);
 			name = plugincore;
+			sourceTree = "<group>";
+		};
+		2402EBCA115CC179003A58A9 /* ExampleEffect */ = {
+			isa = PBXGroup;
+			children = (
+				2402EBD4115CC1ED003A58A9 /* ExampleEffect.cpp */,
+				2402EBD3115CC1ED003A58A9 /* ExampleEffect.h */,
+			);
+			name = ExampleEffect;
+			path = test;
+			sourceTree = "<group>";
+		};
+		2402EBD1115CC1B0003A58A9 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				2402EBCA115CC179003A58A9 /* ExampleEffect */,
+			);
+			name = examples;
 			sourceTree = "<group>";
 		};
 		24269800113337C200282ED1 /* source */ = {
@@ -432,10 +488,11 @@
 			isa = PBXGroup;
 			children = (
 				242699271133FBDA00282ED1 /* AudioUnitWrapper. */,
+				242698A6113344A600282ED1 /* test */,
 				242698291133389100282ED1 /* libinterface.a */,
 				242698131133380100282ED1 /* libwrapper.a */,
-				2426989A1133446C00282ED1 /* vst. */,
-				242698A6113344A600282ED1 /* test */,
+				2402EBD9115CC255003A58A9 /* libExampleEffect.dylib */,
+				2402EC2E115CC6CF003A58A9 /* VstWrapper.vst */,
 			);
 			name = products;
 			sourceTree = "<group>";
@@ -496,10 +553,10 @@
 				2426997D113400EC00282ED1 /* PkgInfo */,
 				2493544511343600000BF241 /* AudioUnitWrapper.exp */,
 				2493544D113436A2000BF241 /* AudioUnitWrapperVersion.h */,
-				249350FF113431E4000BF241 /* AudioUnitWrapper.plist */,
-				2426998F113402A400282ED1 /* VstWrapper.plist */,
-				2493544B11343673000BF241 /* AudioUnitWrapper.r */,
 				24A561BC1158C525005F03C2 /* PrefixMac.h */,
+				2402EC3E115CC76D003A58A9 /* AudioUnitWrapper-Info.plist */,
+				2402EC3F115CC76D003A58A9 /* VstWrapper-Info.plist */,
+				2493544B11343673000BF241 /* AudioUnitWrapper.r */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -632,6 +689,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2402EBD5115CC255003A58A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2426980F1133380100282ED1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,16 +708,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		242698961133446C00282ED1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				242699A2113404C500282ED1 /* aeffeditor.h in Headers */,
-				242699A4113404C500282ED1 /* audioeffect.h in Headers */,
-				242699A6113404C500282ED1 /* audioeffectx.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +751,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2402EBD8115CC255003A58A9 /* ExampleEffect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2402EBE8115CC2AB003A58A9 /* Build configuration list for PBXNativeTarget "ExampleEffect" */;
+			buildPhases = (
+				2402EBD5115CC255003A58A9 /* Headers */,
+				2402EBD6115CC255003A58A9 /* Sources */,
+				2402EBD7115CC255003A58A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2402EBDF115CC28C003A58A9 /* PBXTargetDependency */,
+				2402EBE1115CC28C003A58A9 /* PBXTargetDependency */,
+				2402EBE5115CC28C003A58A9 /* PBXTargetDependency */,
+			);
+			name = ExampleEffect;
+			productName = ExampleEffect;
+			productReference = 2402EBD9115CC255003A58A9 /* libExampleEffect.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		2402EC2D115CC6CF003A58A9 /* VstWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2402EC32115CC6D0003A58A9 /* Build configuration list for PBXNativeTarget "VstWrapper" */;
+			buildPhases = (
+				2402EC2A115CC6CF003A58A9 /* Resources */,
+				2402EC2B115CC6CF003A58A9 /* Sources */,
+				2402EC2C115CC6CF003A58A9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2402EC34115CC6D7003A58A9 /* PBXTargetDependency */,
+				2402EC36115CC6D7003A58A9 /* PBXTargetDependency */,
+			);
+			name = VstWrapper;
+			productName = VstWrapper;
+			productReference = 2402EC2E115CC6CF003A58A9 /* VstWrapper.vst */;
+			productType = "com.apple.product-type.bundle";
+		};
 		242698121133380100282ED1 /* wrapper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2426981A1133380700282ED1 /* Build configuration list for PBXNativeTarget "wrapper" */;
@@ -731,26 +824,6 @@
 			productName = interface;
 			productReference = 242698291133389100282ED1 /* libinterface.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		242698991133446C00282ED1 /* vst */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 242698B31133450C00282ED1 /* Build configuration list for PBXNativeTarget "vst" */;
-			buildPhases = (
-				242698961133446C00282ED1 /* Headers */,
-				242698971133446C00282ED1 /* Sources */,
-				242698981133446C00282ED1 /* Frameworks */,
-				2426998E1134016F00282ED1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2426989E1133447400282ED1 /* PBXTargetDependency */,
-				242698A01133447800282ED1 /* PBXTargetDependency */,
-			);
-			name = vst;
-			productName = vst;
-			productReference = 2426989A1133446C00282ED1 /* vst. */;
-			productType = "com.apple.product-type.library.dynamic";
 		};
 		242698A5113344A600282ED1 /* test */ = {
 			isa = PBXNativeTarget;
@@ -809,21 +882,21 @@
 			targets = (
 				242699321133FC1C00282ED1 /* all */,
 				242699261133FBDA00282ED1 /* au */,
+				2402EBD8115CC255003A58A9 /* ExampleEffect */,
 				242698281133389100282ED1 /* interface */,
 				242698A5113344A600282ED1 /* test */,
-				242698991133446C00282ED1 /* vst */,
+				2402EC2D115CC6CF003A58A9 /* VstWrapper */,
 				242698121133380100282ED1 /* wrapper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2426998E1134016F00282ED1 /* Resources */ = {
+		2402EC2A115CC6CF003A58A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2426998A1134016A00282ED1 /* PkgInfo in Resources */,
-				24269990113402A400282ED1 /* VstWrapper.plist in Resources */,
+				2402EC5B115CC7C1003A58A9 /* PkgInfo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,7 +904,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24935100113431E4000BF241 /* AudioUnitWrapper.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +921,25 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2402EBD6115CC255003A58A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2402EBF2115CC306003A58A9 /* ExampleEffect.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2402EC2B115CC6CF003A58A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2402EC48115CC7B1003A58A9 /* VstWrapper.cpp in Sources */,
+				2402EC49115CC7B1003A58A9 /* audioeffect.cpp in Sources */,
+				2402EC4A115CC7B1003A58A9 /* audioeffectx.cpp in Sources */,
+				2402EC4B115CC7B1003A58A9 /* vstplugmain.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		242698101133380100282ED1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -864,17 +955,6 @@
 			files = (
 				2426982C113338A200282ED1 /* AudioBuffer.cpp in Sources */,
 				2426982D113338A200282ED1 /* AudioBufferSet.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		242698971133446C00282ED1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				242699681133FC9100282ED1 /* VstWrapper.cpp in Sources */,
-				242699A3113404C500282ED1 /* audioeffect.cpp in Sources */,
-				242699A5113404C500282ED1 /* audioeffectx.cpp in Sources */,
-				242699A7113404C500282ED1 /* vstplugmain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,20 +1001,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2402EBDD115CC272003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2402EBD8115CC255003A58A9 /* ExampleEffect */;
+			targetProxy = 2402EBDC115CC272003A58A9 /* PBXContainerItemProxy */;
+		};
+		2402EBDF115CC28C003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242699261133FBDA00282ED1 /* au */;
+			targetProxy = 2402EBDE115CC28C003A58A9 /* PBXContainerItemProxy */;
+		};
+		2402EBE1115CC28C003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698281133389100282ED1 /* interface */;
+			targetProxy = 2402EBE0115CC28C003A58A9 /* PBXContainerItemProxy */;
+		};
+		2402EBE5115CC28C003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698121133380100282ED1 /* wrapper */;
+			targetProxy = 2402EBE4115CC28C003A58A9 /* PBXContainerItemProxy */;
+		};
+		2402EC34115CC6D7003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698281133389100282ED1 /* interface */;
+			targetProxy = 2402EC33115CC6D7003A58A9 /* PBXContainerItemProxy */;
+		};
+		2402EC36115CC6D7003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 242698121133380100282ED1 /* wrapper */;
+			targetProxy = 2402EC35115CC6D7003A58A9 /* PBXContainerItemProxy */;
+		};
+		2402EC45115CC794003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2402EC2D115CC6CF003A58A9 /* VstWrapper */;
+			targetProxy = 2402EC44115CC794003A58A9 /* PBXContainerItemProxy */;
+		};
 		2426988D1133436200282ED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 242698281133389100282ED1 /* interface */;
 			targetProxy = 2426988C1133436200282ED1 /* PBXContainerItemProxy */;
-		};
-		2426989E1133447400282ED1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 242698121133380100282ED1 /* wrapper */;
-			targetProxy = 2426989D1133447400282ED1 /* PBXContainerItemProxy */;
-		};
-		242698A01133447800282ED1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 242698281133389100282ED1 /* interface */;
-			targetProxy = 2426989F1133447800282ED1 /* PBXContainerItemProxy */;
 		};
 		242698AB113344AE00282ED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -965,11 +1070,6 @@
 			isa = PBXTargetDependency;
 			target = 242698A5113344A600282ED1 /* test */;
 			targetProxy = 242699371133FC2200282ED1 /* PBXContainerItemProxy */;
-		};
-		2426993A1133FC2200282ED1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 242698991133446C00282ED1 /* vst */;
-			targetProxy = 242699391133FC2200282ED1 /* PBXContainerItemProxy */;
 		};
 		2426993C1133FC2200282ED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1011,6 +1111,82 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ./source;
 				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		2402EBDA115CC256003A58A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = ExampleEffect;
+			};
+			name = Debug;
+		};
+		2402EBDB115CC256003A58A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = ExampleEffect;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		2402EC30115CC6D0003A58A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = (
+					./source,
+					"./third-party/vstsdk2.4",
+				);
+				INFOPLIST_FILE = "./mac/VstWrapper-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST";
+				PREBINDING = NO;
+				PRODUCT_NAME = VstWrapper;
+				WRAPPER_EXTENSION = vst;
+			};
+			name = Debug;
+		};
+		2402EC31115CC6D0003A58A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = (
+					./source,
+					"./third-party/vstsdk2.4",
+				);
+				INFOPLIST_FILE = "./mac/VstWrapper-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST";
+				PREBINDING = NO;
+				PRODUCT_NAME = VstWrapper;
+				WRAPPER_EXTENSION = vst;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1078,45 +1254,6 @@
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
 				PRODUCT_NAME = interface;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		2426989B1133446D00282ED1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				EXECUTABLE_EXTENSION = "";
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				HEADER_SEARCH_PATHS = (
-					./source,
-					"./third-party/vstsdk2.4",
-					"./third-party/vstsdk2.4/public.sdk/source/vst2.x",
-				);
-				INFOPLIST_FILE = "./mac/vst-info.plist";
-				PRODUCT_NAME = vst;
-				WRAPPER_EXTENSION = vst;
-			};
-			name = Debug;
-		};
-		2426989C1133446D00282ED1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_EXTENSION = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_MODEL_TUNING = G5;
-				HEADER_SEARCH_PATHS = (
-					./source,
-					"./third-party/vstsdk2.4",
-					"./third-party/vstsdk2.4/public.sdk/source/vst2.x",
-				);
-				INFOPLIST_FILE = "./mac/vst-info.plist";
-				PRODUCT_NAME = vst;
-				WRAPPER_EXTENSION = vst;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1251,6 +1388,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2402EBE8115CC2AB003A58A9 /* Build configuration list for PBXNativeTarget "ExampleEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2402EBDA115CC256003A58A9 /* Debug */,
+				2402EBDB115CC256003A58A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2402EC32115CC6D0003A58A9 /* Build configuration list for PBXNativeTarget "VstWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2402EC30115CC6D0003A58A9 /* Debug */,
+				2402EC31115CC6D0003A58A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2426981A1133380700282ED1 /* Build configuration list for PBXNativeTarget "wrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1265,15 +1420,6 @@
 			buildConfigurations = (
 				2426982A1133389100282ED1 /* Debug */,
 				2426982B1133389100282ED1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		242698B31133450C00282ED1 /* Build configuration list for PBXNativeTarget "vst" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2426989B1133446D00282ED1 /* Debug */,
-				2426989C1133446D00282ED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

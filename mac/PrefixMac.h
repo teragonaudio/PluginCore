@@ -7,5 +7,7 @@
  *
  */
 
+#include <Carbon/Carbon.h>
+
 #define MAC 1
 #define MACX 1
