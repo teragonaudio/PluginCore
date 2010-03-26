@@ -166,6 +166,13 @@
 			remoteGlobalIDString = 2402EC2D115CC6CF003A58A9 /* VstWrapper */;
 			remoteInfo = VstWrapper;
 		};
+		2402EE30115CD599003A58A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2402EC2D115CC6CF003A58A9 /* VstWrapper */;
+			remoteInfo = VstWrapper;
+		};
 		2426988C1133436200282ED1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -234,7 +241,7 @@
 /* Begin PBXFileReference section */
 		2402EBD3115CC1ED003A58A9 /* ExampleEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleEffect.h; path = examples/ExampleEffect/ExampleEffect.h; sourceTree = SOURCE_ROOT; };
 		2402EBD4115CC1ED003A58A9 /* ExampleEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExampleEffect.cpp; path = examples/ExampleEffect/ExampleEffect.cpp; sourceTree = SOURCE_ROOT; };
-		2402EBD9115CC255003A58A9 /* libExampleEffect.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libExampleEffect.dylib; path = build/Debug/libExampleEffect.dylib; sourceTree = "<group>"; };
+		2402EBD9115CC255003A58A9 /* ExampleEffect.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ExampleEffect.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		2402EC2E115CC6CF003A58A9 /* VstWrapper.vst */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = VstWrapper.vst; path = build/Debug/VstWrapper.vst; sourceTree = "<group>"; };
 		2402EC3E115CC76D003A58A9 /* AudioUnitWrapper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AudioUnitWrapper-Info.plist"; path = "mac/AudioUnitWrapper-Info.plist"; sourceTree = "<group>"; };
 		2402EC3F115CC76D003A58A9 /* VstWrapper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "VstWrapper-Info.plist"; path = "mac/VstWrapper-Info.plist"; sourceTree = "<group>"; };
@@ -491,7 +498,7 @@
 				242698A6113344A600282ED1 /* test */,
 				242698291133389100282ED1 /* libinterface.a */,
 				242698131133380100282ED1 /* libwrapper.a */,
-				2402EBD9115CC255003A58A9 /* libExampleEffect.dylib */,
+				2402EBD9115CC255003A58A9 /* ExampleEffect.dylib */,
 				2402EC2E115CC6CF003A58A9 /* VstWrapper.vst */,
 			);
 			name = products;
@@ -758,6 +765,8 @@
 				2402EBD5115CC255003A58A9 /* Headers */,
 				2402EBD6115CC255003A58A9 /* Sources */,
 				2402EBD7115CC255003A58A9 /* Frameworks */,
+				2402EE28115CD4A5003A58A9 /* Build VST Plugin */,
+				2402EE41115CD746003A58A9 /* Install Plugins */,
 			);
 			buildRules = (
 			);
@@ -765,10 +774,11 @@
 				2402EBDF115CC28C003A58A9 /* PBXTargetDependency */,
 				2402EBE1115CC28C003A58A9 /* PBXTargetDependency */,
 				2402EBE5115CC28C003A58A9 /* PBXTargetDependency */,
+				2402EE31115CD599003A58A9 /* PBXTargetDependency */,
 			);
 			name = ExampleEffect;
 			productName = ExampleEffect;
-			productReference = 2402EBD9115CC255003A58A9 /* libExampleEffect.dylib */;
+			productReference = 2402EBD9115CC255003A58A9 /* ExampleEffect.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		2402EC2D115CC6CF003A58A9 /* VstWrapper */ = {
@@ -920,6 +930,37 @@
 		};
 /* End PBXRezBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2402EE28115CD4A5003A58A9 /* Build VST Plugin */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build VST Plugin";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python \"$PROJECT_DIR/tools/makeVst-Mac.py\" \"$BUILT_PRODUCTS_DIR/VstWrapper.vst\" \"$BUILT_PRODUCTS_DIR/ExampleEffect.dylib\" \"org.teragon.ExampleEffect.vst\"";
+		};
+		2402EE41115CD746003A58A9 /* Install Plugins */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Plugins";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r \"$BUILT_PRODUCTS_DIR/$TARGET_NAME.vst\" \"$HOME/Library/Audio/Plug-Ins/VST\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2402EBD6115CC255003A58A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1036,6 +1077,11 @@
 			target = 2402EC2D115CC6CF003A58A9 /* VstWrapper */;
 			targetProxy = 2402EC44115CC794003A58A9 /* PBXContainerItemProxy */;
 		};
+		2402EE31115CD599003A58A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2402EC2D115CC6CF003A58A9 /* VstWrapper */;
+			targetProxy = 2402EE30115CD599003A58A9 /* PBXContainerItemProxy */;
+		};
 		2426988D1133436200282ED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 242698281133389100282ED1 /* interface */;
@@ -1119,7 +1165,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				EXECUTABLE_PREFIX = lib;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1136,7 +1181,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
