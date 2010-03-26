@@ -9,8 +9,8 @@ namespace teragon {
 namespace plugincore {
 	class Plugin {
   public:
-		Plugin();
-		virtual ~Plugin();
+		Plugin() {};
+		virtual ~Plugin() {};
 		
 		virtual void initialize() = 0;
 		virtual void process(const AudioBufferSet& inputs, AudioBufferSet& outputs) = 0;
