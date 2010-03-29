@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="vst"
+	Name="VstWrapper"
 	ProjectGUID="{34BA9737-80B1-433C-8F18-027D415FA2A6}"
 	RootNamespace="VstWrapper"
 	Keyword="Win32Proj"
