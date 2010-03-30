@@ -154,6 +154,10 @@
 		<Filter
 			Name="Source"
 			>
+			<File
+				RelativePath="..\source\PrefixCommon.h"
+				>
+			</File>
 			<Filter
 				Name="buffer"
 				>
