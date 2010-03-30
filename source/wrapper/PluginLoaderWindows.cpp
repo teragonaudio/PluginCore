@@ -17,15 +17,35 @@ namespace plugincore {
   Plugin* PluginLoaderWindows::load() {
     Plugin* result = NULL;
 
-    result = loadWithRegistryKey();
+    result = loadFromFile(getPluginLocationInRegistry());
+    if(result == NULL) {
+      result = loadFromFile(getPluginLocationInProgramFiles());
+    }
 
     return result;
   }
 
-  Plugin* PluginLoaderWindows::loadWithRegistryKey() {
+  std::string PluginLoaderWindows::getPluginLocationInRegistry() {
+    std::string result = "";
+
+    return result;
+  }
+
+  std::string PluginLoaderWindows::getPluginLocationInProgramFiles() {
+    std::string result = "";
+
+    return result;
+  }
+
+  Plugin* PluginLoaderWindows::loadFromFile(std::string pluginLocation) {
     Plugin* result = NULL;
 
-    std::string pluginLocation = getRegistryKey(kDefaultRegistryLocation, "test");//getShortLibraryName());
+    if(pluginLocation.size() > 0) {
+      LPCTSTR pluginLocationForWinApi = reinterpret_cast<LPCTSTR>(pluginLocation.c_str());
+      if(pluginLocationForWinApi != NULL) {
+        HMODULE module = LoadLibrary(pluginLocationForWinApi);
+      }
+    }
 
     return result;
   }

@@ -9,6 +9,8 @@
 #define kDefaultRegistryLocation "SOFTWARE\\Teragon Audio\\PluginCore"
 #endif
 
+#include <string>
+
 namespace teragon {
 namespace plugincore {
   class PluginLoaderWindows : public PluginLoader {
@@ -20,11 +22,13 @@ namespace plugincore {
 
     static const unsigned long kRegistryKeyBufferSize = 1024;
 
-  protected:
-    Plugin* loadWithRegistryKey();
-    std::string getRegistryKey(const char* location, const char* keyName);
+  private:
+    Plugin* loadFromFile(std::string pluginLocation);
 
-    
+    std::string getPluginLocationInRegistry();
+    std::string getPluginLocationInProgramFiles();
+
+    std::string getRegistryKey(const char* location, const char* keyName);    
   };
 }
 }
