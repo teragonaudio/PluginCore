@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="interface"
+	Name="PluginCore Interface"
 	ProjectGUID="{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}"
 	RootNamespace="main"
 	Keyword="Win32Proj"

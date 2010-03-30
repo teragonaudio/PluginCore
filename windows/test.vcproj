@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="test"
+	Name="Test Suite"
 	ProjectGUID="{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}"
 	RootNamespace="test"
 	Keyword="Win32Proj"
@@ -195,14 +195,6 @@
 					>
 				</File>
 			</Filter>
-		</Filter>
-		<Filter
-			Name="wrapper"
-			>
-			<File
-				RelativePath="..\test\wrapper\PluginLoaderWindowsTest.cpp"
-				>
-			</File>
 		</Filter>
 	</Files>
 	<Globals>

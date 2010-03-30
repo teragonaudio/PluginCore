@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="VstWrapper"
+	Name="VstWrapper-2.4"
 	ProjectGUID="{34BA9737-80B1-433C-8F18-027D415FA2A6}"
 	RootNamespace="VstWrapper"
 	Keyword="Win32Proj"
@@ -64,6 +64,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\VstWrapper-24.dll"
 				LinkIncremental="2"
 				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
 				ModuleDefinitionFile="VstWrapper.def"
@@ -142,6 +143,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\VstWrapper-24.dll"
 				LinkIncremental="1"
 				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
 				ModuleDefinitionFile="VstWrapper.def"
@@ -181,7 +183,15 @@
 			Name="Source"
 			>
 			<File
-				RelativePath=".\PrefixWindows.h"
+				RelativePath="..\source\wrapper\PluginLoader.h"
+				>
+			</File>
+			<File
+				RelativePath="..\source\wrapper\PluginLoaderWindows.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\source\wrapper\PluginLoaderWindows.h"
 				>
 			</File>
 			<File
@@ -229,6 +239,10 @@
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath=".\PrefixWindows.h"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>
