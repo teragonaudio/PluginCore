@@ -6,12 +6,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleEffect", "ExampleEff
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081} = {3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VstWrapper", "..\..\windows\VstWrapper.vcproj", "{34BA9737-80B1-433C-8F18-027D415FA2A6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PluginCore Interface", "..\..\windows\PluginCoreInterface.vcproj", "{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VstWrapper-2.4", "..\..\windows\VstWrapper-24.vcproj", "{34BA9737-80B1-433C-8F18-027D415FA2A6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081} = {3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}
 	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interface", "..\..\windows\interface.vcproj", "{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +23,14 @@ Global
 		{2F1A580A-660A-40C6-A3BE-6EDCB0CEBCD7}.Debug|Win32.Build.0 = Debug|Win32
 		{2F1A580A-660A-40C6-A3BE-6EDCB0CEBCD7}.Release|Win32.ActiveCfg = Release|Win32
 		{2F1A580A-660A-40C6-A3BE-6EDCB0CEBCD7}.Release|Win32.Build.0 = Release|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.ActiveCfg = Debug|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.Build.0 = Debug|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.ActiveCfg = Release|Win32
-		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.Build.0 = Release|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Debug|Win32.ActiveCfg = Debug|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Debug|Win32.Build.0 = Debug|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Release|Win32.ActiveCfg = Release|Win32
 		{3E0B5A0B-FCD3-4E6B-8236-2F8CC638B081}.Release|Win32.Build.0 = Release|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Debug|Win32.Build.0 = Debug|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.ActiveCfg = Release|Win32
+		{34BA9737-80B1-433C-8F18-027D415FA2A6}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

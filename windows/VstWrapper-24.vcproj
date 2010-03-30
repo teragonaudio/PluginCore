@@ -67,7 +67,7 @@
 				OutputFile="$(OutDir)\VstWrapper-24.dll"
 				LinkIncremental="2"
 				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
-				ModuleDefinitionFile="VstWrapper.def"
+				ModuleDefinitionFile="VstWrapper-24.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -146,7 +146,7 @@
 				OutputFile="$(OutDir)\VstWrapper-24.dll"
 				LinkIncremental="1"
 				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
-				ModuleDefinitionFile="VstWrapper.def"
+				ModuleDefinitionFile="VstWrapper-24.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -235,14 +235,14 @@
 			Name="Resources"
 			>
 			<File
-				RelativePath=".\VstWrapper.def"
+				RelativePath=".\PrefixWindows.h"
+				>
+			</File>
+			<File
+				RelativePath=".\VstWrapper-24.def"
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\PrefixWindows.h"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
