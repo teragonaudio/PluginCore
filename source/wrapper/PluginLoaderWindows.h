@@ -5,14 +5,12 @@
 #include "wrapper/PluginLoader.h"
 #endif
 
-#ifndef DEFAULT_REGISTRY_LOCATION
-#define kDefaultRegistryLocation "SOFTWARE\\Teragon Audio\\PluginCore"
-#endif
-
 #include <string>
 
 namespace teragon {
 namespace plugincore {
+  const std::string kProgramFilesEnvKey = "PROGRAMFILES";
+
   class PluginLoaderWindows : public PluginLoader {
   public:
     PluginLoaderWindows();

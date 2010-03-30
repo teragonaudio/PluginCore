@@ -34,6 +34,20 @@ namespace plugincore {
   std::string PluginLoaderWindows::getPluginLocationInProgramFiles() {
     std::string result = "";
 
+    char programFilesLocation[kBufferStringSize];
+    LPCWSTR programFilesKey = reinterpret_cast<LPCWSTR>(kProgramFilesEnvKey.c_str());
+    if(GetEnvironmentVariable(programFilesKey, (LPWSTR)programFilesLocation, kBufferStringSize) > 0) {
+      result.assign(programFilesLocation);
+      result.append(1, kDirectoryDelimiter);
+      result.append(PLUGIN_MANUFACTURER);
+      result.append(1, kDirectoryDelimiter);
+      result.append(PLUGIN_NAME);
+      result.append(1, kDirectoryDelimiter);
+      result.append(PLUGIN_NAME);
+      result.append(".");
+      result.append(VST24_EXTENSION);
+    }
+
     return result;
   }
 
@@ -44,6 +58,15 @@ namespace plugincore {
       LPCTSTR pluginLocationForWinApi = reinterpret_cast<LPCTSTR>(pluginLocation.c_str());
       if(pluginLocationForWinApi != NULL) {
         HMODULE module = LoadLibrary(pluginLocationForWinApi);
+        if(module != NULL) {
+          FARPROC pluginFactoryAddress = GetProcAddress(module, kPluginFactoryFunctionName.c_str());
+          if(pluginFactoryAddress != NULL) {
+            PluginFactoryFuncPtr* pluginFactory = reinterpret_cast<PluginFactoryFuncPtr*>(pluginFactoryAddress);
+            if(pluginFactory != NULL) {
+              result = pluginFactory();
+            }
+          }
+        }
       }
     }
 
@@ -53,7 +76,7 @@ namespace plugincore {
   std::string PluginLoaderWindows::getRegistryKey(const char* location, const char* keyName) {
     HKEY key;
     TCHAR value[kRegistryKeyBufferSize]; 
-    DWORD bufLen = 1024*sizeof(TCHAR);
+    DWORD bufferLen = 1024 * sizeof(TCHAR);
     long ret;
     ret = RegOpenKeyExA(HKEY_LOCAL_MACHINE, location, 0, KEY_QUERY_VALUE, &key);
     if( ret != ERROR_SUCCESS ){
@@ -61,12 +84,12 @@ namespace plugincore {
       FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, ret,  0, error_msg, 1024, NULL);
         return std::string();
     }
-    ret = RegQueryValueExA(key, keyName, 0, 0, (LPBYTE) value, &bufLen);
+    ret = RegQueryValueExA(key, keyName, 0, 0, (LPBYTE) value, &bufferLen);
     RegCloseKey(key);
-    if ( (ret != ERROR_SUCCESS) || (bufLen > 1024*sizeof(TCHAR)) ){
+    if((ret != ERROR_SUCCESS) || (bufferLen > 1024 * sizeof(TCHAR))) {
         return std::string();
     }
-    std::string stringValue = std::string((char*)value);//, (size_t)bufLen - 1);
+    std::string stringValue = reinterpret_cast<char*>(value);
     size_t i = stringValue.length();
     while(i > 0 && stringValue[i - 1] == '\0') {
       --i;

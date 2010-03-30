@@ -11,8 +11,16 @@
 #define PLUGIN_LOCATION ""
 #endif
 
+#if WINDOWS
+#define VST24_EXTENSION "dll"
+#elif MAC
+#define VST24_EXTENSION "vst"
+#endif
+
 namespace teragon {
 namespace plugincore {
+  typedef Plugin*(PluginFactoryFuncPtr)(void);
+
   class PluginLoader {
   public:
     PluginLoader() {};
