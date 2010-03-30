@@ -9,7 +9,10 @@
 
 namespace teragon {
 namespace plugincore {
+  const std::string kVst24Extension = "dll";
   const std::string kProgramFilesEnvKey = "PROGRAMFILES";
+  const std::string kSoftwareRegistryKey = "SOFTWARE";
+  const std::string kPluginLocationRegistryKey = "PluginCoreLibPath";
 
   class PluginLoaderWindows : public PluginLoader {
   public:
@@ -26,7 +29,7 @@ namespace plugincore {
     std::string getPluginLocationInRegistry();
     std::string getPluginLocationInProgramFiles();
 
-    std::string getRegistryKey(const char* location, const char* keyName);    
+    std::string getRegistryKey(std::string location, std::string keyName);    
   };
 }
 }

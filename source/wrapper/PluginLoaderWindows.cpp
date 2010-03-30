@@ -26,9 +26,13 @@ namespace plugincore {
   }
 
   std::string PluginLoaderWindows::getPluginLocationInRegistry() {
-    std::string result = "";
+    std::string pluginLocationRegistryKey = kSoftwareRegistryKey;
+    pluginLocationRegistryKey.append(1, kDirectoryDelimiter);
+    pluginLocationRegistryKey.append(PLUGIN_MANUFACTURER);
+    pluginLocationRegistryKey.append(1, kDirectoryDelimiter);
+    pluginLocationRegistryKey.append(PLUGIN_NAME);
 
-    return result;
+    return getRegistryKey(pluginLocationRegistryKey, kPluginLocationRegistryKey);
   }
 
   /**
@@ -42,8 +46,8 @@ namespace plugincore {
     std::string result = "";
 
     char programFilesLocation[kBufferStringSize];
-    LPCWSTR programFilesKey = reinterpret_cast<LPCWSTR>(kProgramFilesEnvKey.c_str());
-    if(GetEnvironmentVariable(programFilesKey, (LPWSTR)programFilesLocation, kBufferStringSize) > 0) {
+    LPCSTR programFilesKey = reinterpret_cast<LPCSTR>(kProgramFilesEnvKey.c_str());
+    if(GetEnvironmentVariable(programFilesKey, (LPSTR)programFilesLocation, kBufferStringSize) > 0) {
       result.assign(programFilesLocation);
       result.append(1, kDirectoryDelimiter);
       result.append(PLUGIN_MANUFACTURER);
@@ -52,55 +56,79 @@ namespace plugincore {
       result.append(1, kDirectoryDelimiter);
       result.append(PLUGIN_NAME);
       result.append(1, kFileDelimiter);
-      result.append(VST24_EXTENSION);
+      result.append(kVst24Extension);
     }
 
     return result;
   }
 
+  /**
+   * Instantiates a plugin object from a dynamic library
+   * \param pluginLocation Full path to plugin, including extension
+   * \return Initialized Plugin interface object, or else NULL if the plugin could not be loaded
+   */
   Plugin* PluginLoaderWindows::loadFromFile(std::string pluginLocation) {
     Plugin* result = NULL;
 
-    if(pluginLocation.size() > 0) {
-      LPCTSTR pluginLocationForWinApi = reinterpret_cast<LPCTSTR>(pluginLocation.c_str());
-      if(pluginLocationForWinApi != NULL) {
-        HMODULE module = LoadLibrary(pluginLocationForWinApi);
-        if(module != NULL) {
-          FARPROC pluginFactoryAddress = GetProcAddress(module, kPluginFactoryFunctionName.c_str());
-          if(pluginFactoryAddress != NULL) {
-            PluginFactoryFuncPtr* pluginFactory = reinterpret_cast<PluginFactoryFuncPtr*>(pluginFactoryAddress);
-            if(pluginFactory != NULL) {
-              result = pluginFactory();
-            }
-          }
-        }
+    try {
+      if(pluginLocation.size() == 0) {
+        throw 1;
       }
+
+      LPCTSTR pluginLocationForWinApi = reinterpret_cast<LPCTSTR>(pluginLocation.c_str());
+      if(pluginLocationForWinApi == NULL) {
+        throw 2;
+      }
+
+      HMODULE module = LoadLibrary(pluginLocationForWinApi);
+      if(module == NULL) {
+        throw 3;
+      }
+
+      FARPROC pluginFactoryAddress = GetProcAddress(module, kPluginFactoryFunctionName.c_str());
+      if(pluginFactoryAddress == NULL) {
+        throw 4;
+      }
+
+      PluginFactoryFuncPtr* pluginFactory = reinterpret_cast<PluginFactoryFuncPtr*>(pluginFactoryAddress);
+      if(pluginFactory == NULL) {
+        throw 5;
+      }
+      
+      result = pluginFactory();
+    }
+    catch(int e) {
+      DWORD errorCode = GetLastError();
+      printf("Error loading plugin from file: %d, error code %d\n", e, errorCode);
     }
 
     return result;
   }
 
-  std::string PluginLoaderWindows::getRegistryKey(const char* location, const char* keyName) {
+  std::string PluginLoaderWindows::getRegistryKey(std::string location, std::string keyName) {
     HKEY key;
     TCHAR value[kRegistryKeyBufferSize]; 
-    DWORD bufferLen = 1024 * sizeof(TCHAR);
-    long ret;
-    ret = RegOpenKeyExA(HKEY_LOCAL_MACHINE, location, 0, KEY_QUERY_VALUE, &key);
-    if( ret != ERROR_SUCCESS ){
-      TCHAR error_msg[1024];
-      FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, ret,  0, error_msg, 1024, NULL);
-        return std::string();
+    DWORD bufferLen = kBufferStringSize * sizeof(TCHAR);
+    long ret = RegOpenKeyExA(HKEY_LOCAL_MACHINE, location.c_str(), 0, KEY_QUERY_VALUE, &key);
+
+    if(ret != ERROR_SUCCESS) {
+      TCHAR error_msg[kBufferStringSize];
+      FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, ret,  0, error_msg, kBufferStringSize, NULL);
+      return std::string();
     }
-    ret = RegQueryValueExA(key, keyName, 0, 0, (LPBYTE) value, &bufferLen);
+
+    ret = RegQueryValueExA(key, keyName.c_str(), 0, 0, (LPBYTE) value, &bufferLen);
     RegCloseKey(key);
-    if((ret != ERROR_SUCCESS) || (bufferLen > 1024 * sizeof(TCHAR))) {
+    if((ret != ERROR_SUCCESS) || (bufferLen > kBufferStringSize * sizeof(TCHAR))) {
         return std::string();
     }
+
     std::string stringValue = reinterpret_cast<char*>(value);
     size_t i = stringValue.length();
     while(i > 0 && stringValue[i - 1] == '\0') {
       --i;
     }
+
     return stringValue.substr(0,i); 
   }
 }
