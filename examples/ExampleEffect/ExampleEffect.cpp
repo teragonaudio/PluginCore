@@ -11,12 +11,6 @@
 #include "ExampleEffect.h"
 #endif
 
-extern "C" {
-  teragon::plugincore::Plugin* createPlugin() {
-    return new teragon::ExampleEffect();
-  }
-};
-
 namespace teragon {
   ExampleEffect::ExampleEffect() : teragon::plugincore::Plugin() {
   }
