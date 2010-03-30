@@ -41,15 +41,17 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
-				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)\..\source&quot;;&quot;$(ProjectDir)\..\third-party\vstsdk2.4&quot;;&quot;$(ProjectDir)\..\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				PreprocessorDefinitions="_DEBUG;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="1"
+				PrecompiledHeaderThrough="PrefixWindows.h"
 				WarningLevel="3"
 				DebugInformationFormat="4"
 				CompileAs="0"
+				ForcedIncludeFiles="PrefixWindows.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -118,14 +120,16 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
-				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)\..\source&quot;;&quot;$(ProjectDir)\..\third-party\vstsdk2.4&quot;;&quot;$(ProjectDir)\..\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
+				PreprocessorDefinitions="NDEBUG;_USRDLL"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="1"
+				PrecompiledHeaderThrough="PrefixWindows.h"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
+				ForcedIncludeFiles="PrefixWindows.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -176,6 +180,10 @@
 		<Filter
 			Name="Source"
 			>
+			<File
+				RelativePath=".\PrefixWindows.h"
+				>
+			</File>
 			<File
 				RelativePath="..\source\wrapper\VstWrapper.cpp"
 				>
