@@ -3,6 +3,8 @@
 // Definitions common to all PluginCore API
 const std::string kPluginFactoryFunctionName = "createPluginInstance";
 
+const char kFileDelimiter = '.';
+
 // Load plugin definitions from the project
 #include "PluginDefinition.h"
 

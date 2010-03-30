@@ -31,6 +31,13 @@ namespace plugincore {
     return result;
   }
 
+  /**
+   * \return Full path to the plugin's expected library location in the Program Files directory,
+   * which should look something like:
+   * C:\Program Files\Your Company Name\PluginName\PluginName.dll
+   * Where the company and plugin name are defined in the PluginDefinition.h file which your
+   * project should have defined.
+   */
   std::string PluginLoaderWindows::getPluginLocationInProgramFiles() {
     std::string result = "";
 
@@ -44,7 +51,7 @@ namespace plugincore {
       result.append(PLUGIN_NAME);
       result.append(1, kDirectoryDelimiter);
       result.append(PLUGIN_NAME);
-      result.append(".");
+      result.append(1, kFileDelimiter);
       result.append(VST24_EXTENSION);
     }
 
