@@ -21,7 +21,7 @@
 			OutputDirectory="$(SolutionDir)\build\$(ConfigurationName)"
 			IntermediateDirectory="$(OutDir)"
 			ConfigurationType="2"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -49,7 +49,7 @@
 				UsePrecompiledHeader="1"
 				PrecompiledHeaderThrough="PrefixWindows.h"
 				WarningLevel="3"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				CompileAs="0"
 				ForcedIncludeFiles="PrefixWindows.h"
 			/>
@@ -99,7 +99,7 @@
 			OutputDirectory="$(SolutionDir)\build\$(ConfigurationName)"
 			IntermediateDirectory="$(OutDir)"
 			ConfigurationType="2"
-			CharacterSet="1"
+			CharacterSet="0"
 			WholeProgramOptimization="1"
 			>
 			<Tool

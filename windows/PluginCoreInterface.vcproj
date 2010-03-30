@@ -50,7 +50,7 @@
 				PrecompiledHeaderThrough="PrefixWindows.h"
 				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
 				WarningLevel="3"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				ForcedIncludeFiles="PrefixWindows.h"
 			/>
 			<Tool
