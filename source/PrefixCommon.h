@@ -8,6 +8,10 @@ const char kFileDelimiter = '.';
 // Load plugin definitions from the project
 #include "PluginDefinition.h"
 
+#ifndef PLUGIN_ID
+#error PLUGIN_ID must be defined in your project's PluginDefinition.h file
+#endif
+
 #ifndef PLUGIN_NAME
 #error PLUGIN_NAME must be defined in your project's PluginDefinition.h file
 #endif

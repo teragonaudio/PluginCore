@@ -6,5 +6,6 @@
  * the various plugin wrappers where to find the actual library which your core file is located.
  */
 
+#define PLUGIN_ID '????'
 #define PLUGIN_NAME "YourPluginName"
 #define PLUGIN_MANUFACTURER "Your Company Name"
