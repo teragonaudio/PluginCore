@@ -14,6 +14,10 @@
 #include "plugincore/plugin/Plugin.h"
 #endif
 
+#ifndef __ParameterSetMap_h__
+#include "plugincore/parameter/ParameterSetMap.h"
+#endif
+
 namespace teragon {
   class ExampleEffect : public teragon::plugincore::Plugin {
   public:
@@ -28,7 +32,11 @@ namespace teragon {
     const unsigned long getPluginId() const { return 'exfx'; }
     const unsigned long getPluginManufacturerId() const { return 'Tera'; }
     const int getNumPrograms() const { return 0; }
-    const int getNumParameters() const { return 1; }
+
+    const teragon::plugincore::PluginParameterSet& getParameterSet() const { return this->parameters; }
+
+  private:
+    teragon::plugincore::ParameterSetMap parameters;
   };
 }
 

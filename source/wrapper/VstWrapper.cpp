@@ -38,7 +38,7 @@ AudioEffect* createEffectInstance(audioMasterCallback audioMaster) {
 namespace teragon {
 namespace plugincore {
   VstWrapper::VstWrapper(Plugin *plugin, audioMasterCallback audioMaster) :
-  AudioEffectX(audioMaster, plugin->getNumPrograms(), plugin->getNumParameters()) {
+    AudioEffectX(audioMaster, plugin->getNumPrograms(), plugin->getParameterSet().size()) {
     this->plugin = plugin;
 
     if(audioMaster) {

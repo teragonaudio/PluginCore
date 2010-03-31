@@ -5,6 +5,10 @@
 #include "plugincore/buffer/AudioBufferSet.h"
 #endif
 
+#ifndef __PluginParameterSet_h__
+#include "plugincore/parameter/PluginParameterSet.h"
+#endif
+
 namespace teragon {
 namespace plugincore {
 	class Plugin {
@@ -21,7 +25,7 @@ namespace plugincore {
     virtual const unsigned long getPluginManufacturerId() const = 0;
     virtual const int getNumPrograms() const = 0;
 
-    virtual const int getNumParameters() const = 0;
+    virtual const PluginParameterSet& getParameterSet() const = 0;
 	};
 }
 }

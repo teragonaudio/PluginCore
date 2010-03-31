@@ -186,6 +186,26 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="parameter"
+				>
+				<File
+					RelativePath="..\source\plugincore\parameter\ParameterSetMap.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\source\plugincore\parameter\ParameterSetMap.h"
+					>
+				</File>
+				<File
+					RelativePath="..\source\plugincore\parameter\PluginParameter.h"
+					>
+				</File>
+				<File
+					RelativePath="..\source\plugincore\parameter\PluginParameterSet.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<File
 			RelativePath="..\PluginDefinition.h"

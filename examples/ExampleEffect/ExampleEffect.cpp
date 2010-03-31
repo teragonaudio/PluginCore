@@ -18,7 +18,7 @@ extern "C" {
 };
 
 namespace teragon {
-  ExampleEffect::ExampleEffect() : teragon::plugincore::Plugin() {
+  ExampleEffect::ExampleEffect() : teragon::plugincore::Plugin(), parameters() {
   }
   
   ExampleEffect::~ExampleEffect() {
