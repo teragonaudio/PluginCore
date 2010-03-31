@@ -16,15 +16,7 @@ namespace plugincore {
 		Plugin() {};
 		virtual ~Plugin() {};
 		
-		virtual void initialize() = 0;
 		virtual void process(const AudioBufferSet& inputs, AudioBufferSet& outputs) = 0;
-		
-    virtual const int getNumInputs() const = 0;
-    virtual const int getNumOutputs() const = 0;
-    virtual const unsigned long getPluginId() const = 0;
-    virtual const unsigned long getPluginManufacturerId() const = 0;
-    virtual const int getNumPrograms() const = 0;
-
     virtual const PluginParameterSet& getParameterSet() const = 0;
 	};
 }
