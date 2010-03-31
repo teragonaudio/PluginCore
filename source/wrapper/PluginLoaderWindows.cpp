@@ -6,6 +6,14 @@
 #include <Windows.h>
 #include <string>
 
+#ifndef __PluginLoaderException_h__
+#include "PluginLoaderException.h"
+#endif
+
+#ifndef __WindowsErrorException_h__
+#include "WindowsErrorException.h"
+#endif
+
 namespace teragon {
 namespace plugincore {
   PluginLoaderWindows::PluginLoaderWindows() : PluginLoader() {
@@ -14,6 +22,12 @@ namespace plugincore {
   PluginLoaderWindows::~PluginLoaderWindows() {
   }
 
+  /**
+   * Attempts to load the plugin library file using the following strategy:
+   * 1. Load plugin from location specified in Windows registry
+   * 2. Load plugin from Program Files directory
+   * \return Initialized plugin instance, or NULL if the plugin could not be loaded
+   */
   Plugin* PluginLoaderWindows::load() {
     Plugin* result = NULL;
 
@@ -25,6 +39,13 @@ namespace plugincore {
     return result;
   }
 
+  /**
+   * \return Full path to the plugin's expected library location based on a key read from
+   * the Windows registry.  The key is read from a location which looks something like this:
+   * \\HKEY_LOCAL_MACHINE\SOFTWARE\Your Company Name\PluginName\PluginCoreLibPath
+   * Where the company and plugin name are defined in the PluginDefinition.h file which your
+   * project should have defined.
+   */
   std::string PluginLoaderWindows::getPluginLocationInRegistry() {
     std::string pluginLocationRegistryKey = kSoftwareRegistryKey;
     pluginLocationRegistryKey.append(1, kDirectoryDelimiter);
@@ -72,64 +93,72 @@ namespace plugincore {
 
     try {
       if(pluginLocation.size() == 0) {
-        throw 1;
+        throw PluginLoaderException("Plugin location is empty");
       }
 
       LPCTSTR pluginLocationForWinApi = reinterpret_cast<LPCTSTR>(pluginLocation.c_str());
       if(pluginLocationForWinApi == NULL) {
-        throw 2;
+        throw PluginLoaderException("Plugin location could not be converted to Windows API format");
       }
 
       HMODULE module = LoadLibrary(pluginLocationForWinApi);
       if(module == NULL) {
-        throw 3;
+        throw WindowsErrorException(GetLastError());
       }
 
       FARPROC pluginFactoryAddress = GetProcAddress(module, kPluginFactoryFunctionName.c_str());
       if(pluginFactoryAddress == NULL) {
-        throw 4;
+        throw WindowsErrorException(GetLastError());
       }
 
       PluginFactoryFuncPtr* pluginFactory = reinterpret_cast<PluginFactoryFuncPtr*>(pluginFactoryAddress);
       if(pluginFactory == NULL) {
-        throw 5;
+        throw PluginLoaderException("Plugin factory address not valid");
       }
       
       result = pluginFactory();
     }
-    catch(int e) {
-      DWORD errorCode = GetLastError();
-      printf("Error loading plugin from file: %d, error code %d\n", e, errorCode);
+    catch(std::exception &error) {
+      printf("Error loading plugin from file: %s\n", error.what());
     }
 
     return result;
   }
 
+  /**
+   * Reads a string-based key from the Windows registry.  The key must be located under the
+   * HKEY_LOCAL_MACHINE root.
+   * \param location Path to key
+   * \param keyName Name of key to read
+   * \return String value of key, or an empty string if an error occurred
+   */
   std::string PluginLoaderWindows::getRegistryKey(std::string location, std::string keyName) {
-    HKEY key;
-    TCHAR value[kRegistryKeyBufferSize]; 
-    DWORD bufferLen = kBufferStringSize * sizeof(TCHAR);
-    long ret = RegOpenKeyExA(HKEY_LOCAL_MACHINE, location.c_str(), 0, KEY_QUERY_VALUE, &key);
+    std::string result = "";
 
-    if(ret != ERROR_SUCCESS) {
-      TCHAR error_msg[kBufferStringSize];
-      FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, ret,  0, error_msg, kBufferStringSize, NULL);
-      return std::string();
+    try {
+      // Open the actual registry key
+      HKEY key;
+      DWORD status = RegOpenKeyExA(HKEY_LOCAL_MACHINE, location.c_str(), 0, KEY_QUERY_VALUE, &key);
+      if(status != ERROR_SUCCESS) {
+        throw WindowsErrorException(status);
+      }
+
+      // Determine the size of the key's value
+      char keyValue[kRegistryKeyBufferSize];
+      DWORD bufferLen;
+      status = RegQueryValueExA(key, keyName.c_str(), 0, 0, (LPBYTE)keyValue, &bufferLen);
+      RegCloseKey(key);
+      if(status != ERROR_SUCCESS) {
+        throw WindowsErrorException(status);
+      }
+
+      result = keyValue;
+    }
+    catch(std::exception& error) {
+      printf("Error getting plugin location from registry: %s\n", error.what());
     }
 
-    ret = RegQueryValueExA(key, keyName.c_str(), 0, 0, (LPBYTE) value, &bufferLen);
-    RegCloseKey(key);
-    if((ret != ERROR_SUCCESS) || (bufferLen > kBufferStringSize * sizeof(TCHAR))) {
-        return std::string();
-    }
-
-    std::string stringValue = reinterpret_cast<char*>(value);
-    size_t i = stringValue.length();
-    while(i > 0 && stringValue[i - 1] == '\0') {
-      --i;
-    }
-
-    return stringValue.substr(0,i); 
+    return result;
   }
 }
 }
