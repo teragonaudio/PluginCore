@@ -187,6 +187,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\source\wrapper\PluginLoaderException.h"
+				>
+			</File>
+			<File
 				RelativePath="..\source\wrapper\PluginLoaderWindows.cpp"
 				>
 			</File>
@@ -200,6 +204,14 @@
 			</File>
 			<File
 				RelativePath="..\source\wrapper\VstWrapper.h"
+				>
+			</File>
+			<File
+				RelativePath="..\source\wrapper\WindowsErrorException.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\source\wrapper\WindowsErrorException.h"
 				>
 			</File>
 		</Filter>
