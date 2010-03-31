@@ -10,9 +10,27 @@ namespace teragon {
     ParameterSetMap::~ParameterSetMap() {
     }
 
-    PluginParameter* ParameterSetMap::getParameter(const ParameterName name) const {
+    void ParameterSetMap::addParameter(PluginParameter* parameter) {
+      parameterStorage.insert(make_pair(parameter->getName(), parameter));
+    }
+
+    PluginParameter* ParameterSetMap::getParameter(const ParameterIndex index) const {
+      ParameterSetMapStorage::const_iterator iterator = parameterStorage.begin();
+      if(iterator != parameterStorage.end()) {
+        // TODO: This is very inefficient...
+        for(int i = 0; i < index; ++i) {
+          iterator++;
+        }
+        return iterator->second;
+      }
+      else {
+        return NULL;
+      }
+    }
+
+    PluginParameter* ParameterSetMap::getParameter(const ParameterString name) const {
       ParameterSetMapStorage::const_iterator iterator = parameterStorage.find(name);
-      return (iterator != NULL) ? iterator->second : NULL;
+      return (iterator != parameterStorage.end()) ? iterator->second : NULL;
     }
     
     const int ParameterSetMap::size() const {

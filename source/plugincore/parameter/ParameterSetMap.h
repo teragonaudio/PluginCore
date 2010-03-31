@@ -9,14 +9,18 @@
 
 namespace teragon {
   namespace plugincore {
-    typedef std::map<ParameterName, PluginParameter*> ParameterSetMapStorage;
+    typedef std::map<ParameterString, PluginParameter*> ParameterSetMapStorage;
 
     class ParameterSetMap : public PluginParameterSet {
     public:
       ParameterSetMap();
       ~ParameterSetMap();
 
-      PluginParameter* getParameter(const ParameterName name) const;
+      void addParameter(PluginParameter* parameter);
+
+      PluginParameter* getParameter(const ParameterIndex index) const;
+      PluginParameter* getParameter(const ParameterString name) const;
+      
       const int size() const;
 
     private:
