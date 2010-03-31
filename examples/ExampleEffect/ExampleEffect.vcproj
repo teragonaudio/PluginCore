@@ -29,8 +29,8 @@
 			<Tool
 				Name="VCCustomBuildTool"
 				Description="Installing Plugin"
-				CommandLine="if not exist &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot; mkdir &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot;&#x0D;&#x0A;copy /Y &quot;$(OutDir)\$(ProjectName).dll&quot; &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot;"
-				Outputs="%PROGRAMFILES%\Teragon Audio\$(ProjectName)\$(ProjectName).dll"
+				CommandLine="if not exist &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot; mkdir &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot;&#x0D;&#x0A;copy /Y &quot;$(OutDir)\$(ProjectName).dll&quot; &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot;&#x0D;&#x0A;if not exist &quot;%PROGRAMFILES%\VstPlugins&quot; mkdir &quot;%PROGRAMFILES%\VstPlugins&quot;&#x0D;&#x0A;copy /Y &quot;$(OutDir)\VstWrapper-24.dll&quot; &quot;%PROGRAMFILES%\VstPlugins\$(ProjectName)-vst24.dll&quot;&#x0D;&#x0A;"
+				Outputs="%PROGRAMFILES%\Teragon Audio\$(ProjectName)\$(ProjectName).dll;%PROGRAMFILES%\VstPlugins\$(ProjectName)-vst24.dll"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -65,6 +65,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				ModuleDefinitionFile="ExampleEffect.def"
+				GenerateDebugInformation="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
