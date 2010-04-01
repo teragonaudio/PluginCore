@@ -5,8 +5,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 const char kDirectoryDelimiter = '\\';
-const int kBufferStringSize = 1024;
 
 #include <Windows.h>
-
 #include "PrefixCommon.h"

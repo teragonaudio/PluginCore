@@ -4,6 +4,7 @@
 const std::string kPluginFactoryFunctionName = "createPluginInstance";
 
 const char kFileDelimiter = '.';
+const int kBufferStringSize = 1024;
 
 // Load plugin definitions from the project
 #include "PluginDefinition.h"
