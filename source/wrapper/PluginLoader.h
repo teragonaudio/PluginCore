@@ -13,6 +13,8 @@
 
 namespace teragon {
 namespace plugincore {
+  typedef Plugin*(PluginFactoryFuncPtr)(void);
+
   class PluginLoader {
   public:
     PluginLoader() {};

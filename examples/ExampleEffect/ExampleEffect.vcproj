@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="vst"
-	ProjectGUID="{34BA9737-80B1-433C-8F18-027D415FA2A6}"
-	RootNamespace="VstWrapper"
+	Name="ExampleEffect"
+	ProjectGUID="{2F1A580A-660A-40C6-A3BE-6EDCB0CEBCD7}"
+	RootNamespace="ExampleEffect"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -28,6 +28,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
+				Description="Installing Plugin"
+				CommandLine="if not exist &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot; mkdir &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot;&#x0D;&#x0A;copy /Y &quot;$(OutDir)\$(ProjectName).dll&quot; &quot;%PROGRAMFILES%\Teragon Audio\$(ProjectName)&quot;&#x0D;&#x0A;if not exist &quot;%PROGRAMFILES%\VstPlugins&quot; mkdir &quot;%PROGRAMFILES%\VstPlugins&quot;&#x0D;&#x0A;copy /Y &quot;$(OutDir)\VstWrapper-24.dll&quot; &quot;%PROGRAMFILES%\VstPlugins\$(ProjectName)-vst24.dll&quot;&#x0D;&#x0A;"
+				Outputs="%PROGRAMFILES%\Teragon Audio\$(ProjectName)\$(ProjectName).dll;%PROGRAMFILES%\VstPlugins\$(ProjectName)-vst24.dll"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -41,15 +44,14 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
-				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="..\..\source"
+				PreprocessorDefinitions="WIN32;_DEBUG;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				DebugInformationFormat="4"
-				CompileAs="0"
+				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -62,12 +64,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
-				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
-				ModuleDefinitionFile="VstWrapper.def"
+				ModuleDefinitionFile="ExampleEffect.def"
 				GenerateDebugInformation="true"
-				SubSystem="2"
-				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -89,6 +87,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine=""
 			/>
 		</Configuration>
 		<Configuration
@@ -118,14 +117,13 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4&quot;;&quot;$(SolutionDir)\third-party\vstsdk2.4\public.sdk\source\vst2.x&quot;"
-				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_WINDOWS;_USRDLL;VSTWRAPPER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="..\..\source"
+				PreprocessorDefinitions="WIN32;NDEBUG;_USRDLL"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -138,14 +136,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="1"
-				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
-				ModuleDefinitionFile="VstWrapper.def"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"
+				ModuleDefinitionFile="ExampleEffect.def"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -177,47 +168,15 @@
 			Name="Source"
 			>
 			<File
-				RelativePath="..\source\wrapper\VstWrapper.cpp"
+				RelativePath=".\ExampleEffect.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\source\wrapper\VstWrapper.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="VST Source"
-			>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h"
+				RelativePath=".\ExampleEffect.h"
 				>
 			</File>
 			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h"
-				>
-			</File>
-			<File
-				RelativePath="..\third-party\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Resources"
-			>
-			<File
-				RelativePath=".\VstWrapper.def"
+				RelativePath=".\PluginDefinition.h"
 				>
 			</File>
 		</Filter>

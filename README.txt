@@ -4,6 +4,8 @@ PluginCore is a framework for creating audio processing plugins for sequencers o
 
 PluginCore contains two components: the actual plugin interface, and wrapper plugins for each supported platform.  To create a new plugin, one must create a new dynamic library which implements the a single plugin interface, and copy and rename the wrapper plugins which will the end user will copy into their plugin folder.  Further instructions on development and redistribution can be found in the official project documentation.
 
+To build PluginCore, you will need a copy of the VST SDK, which is not distributed with this library due to licensing restrictions.  For more information, consult the README file located in the third-party/vstsdk2.4 directory.
+
 This project is hosted at the following addresses:
 
 Project Page: http://www.teragon.org/p/PluginCore.html

@@ -1,0 +1,5 @@
+LIBRARY ExampleEffect
+EXPORTS
+createPluginInstance
+main=createPluginInstance
+

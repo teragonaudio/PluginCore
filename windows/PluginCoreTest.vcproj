@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="wrapper"
-	ProjectGUID="{AF5890DC-470B-49D7-B771-9186349BA8F6}"
-	RootNamespace="wrapper"
+	Name="PluginCore Test Suite"
+	ProjectGUID="{FEC147FF-85F2-434D-8F6B-BAA4AA114D70}"
+	RootNamespace="test"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -20,7 +20,7 @@
 			Name="Debug|Win32"
 			OutputDirectory="$(SolutionDir)\build\$(ConfigurationName)"
 			IntermediateDirectory="$(OutDir)"
-			ConfigurationType="4"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -41,14 +41,17 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;"
-				PreprocessorDefinitions="WINDOWS=1;WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)\..\source&quot;;&quot;$(SolutionDir)\third-party\gtest\include&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="1"
+				PrecompiledHeaderThrough="PrefixWindows.h"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
 				WarningLevel="3"
 				DebugInformationFormat="4"
+				ForcedIncludeFiles="PrefixWindows.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -60,10 +63,21 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				AdditionalDependencies="gtestd.lib gtest_maind.lib"
+				OutputFile="$(OutDir)\plugincore-test.exe"
+				LinkIncremental="2"
+				AdditionalLibraryDirectories="$(SolutionDir)\third-party\gtest\lib"
+				IgnoreDefaultLibraryNames=""
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -75,6 +89,9 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -82,7 +99,7 @@
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)\build\$(ConfigurationName)"
 			IntermediateDirectory="$(OutDir)"
-			ConfigurationType="4"
+			ConfigurationType="1"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -105,13 +122,16 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\source&quot;"
-				PreprocessorDefinitions="WINDOWS=1;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;&quot;$(ProjectDir)&quot;;&quot;$(ProjectDir)\..\source&quot;;&quot;$(SolutionDir)\third-party\gtest\include&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
+				UsePrecompiledHeader="1"
+				PrecompiledHeaderThrough="PrefixWindows.h"
+				PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
 				WarningLevel="3"
 				DebugInformationFormat="3"
+				ForcedIncludeFiles="PrefixWindows.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -123,10 +143,22 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				AdditionalDependencies="gtest.lib gtest_main.lib"
+				OutputFile="$(OutDir)\plugincore-test.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="$(SolutionDir)\third-party\gtest\lib"
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -138,6 +170,9 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -146,20 +181,20 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Source"
+			Name="interface"
 			>
-			<File
-				RelativePath="..\source\wrapper\PluginLoader.h"
+			<Filter
+				Name="buffer"
 				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\PluginLoaderWindows.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\source\wrapper\PluginLoaderWindows.h"
-				>
-			</File>
+				<File
+					RelativePath="..\test\interface\buffer\AudioBufferSetTest.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\test\interface\buffer\AudioBufferTest.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 	</Files>
 	<Globals>

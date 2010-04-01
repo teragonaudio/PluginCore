@@ -97,8 +97,8 @@ namespace plugincore {
           }
           else {
             AudioBuffer* buffer = new AudioBuffer();
-            // We are guaranteed to have at least one channel by this point
-            buffer->setSize(oldBuffers[0]->getSize());
+            BufferIndex bufferSize = (oldBuffers != NULL) ? oldBuffers[0]->getSize() : 0;
+            buffer->setSize(bufferSize);
             newBuffers[i] = buffer;
           }
         }
