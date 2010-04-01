@@ -175,7 +175,7 @@
 		242698291133389100282ED1 /* libinterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698301133397100282ED1 /* PluginLoaderMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginLoaderMac.h; sourceTree = "<group>"; };
 		242698311133397100282ED1 /* PluginLoaderMac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginLoaderMac.cpp; sourceTree = "<group>"; };
-		242698A6113344A600282ED1 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		242698A6113344A600282ED1 /* PluginCoreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PluginCoreTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		242698BA1133454300282ED1 /* AudioBufferSetTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferSetTest.cpp; sourceTree = "<group>"; };
 		242698BB1133454300282ED1 /* AudioBufferTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioBufferTest.cpp; sourceTree = "<group>"; };
 		242698BD1133454300282ED1 /* PluginLoaderWindowsTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginLoaderWindowsTest.cpp; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				242699271133FBDA00282ED1 /* AudioUnitWrapper. */,
-				242698A6113344A600282ED1 /* test */,
+				242698A6113344A600282ED1 /* PluginCoreTest */,
 				242698291133389100282ED1 /* libinterface.a */,
 				2402EC2E115CC6CF003A58A9 /* VstWrapper.vst */,
 			);
@@ -675,7 +675,7 @@
 			);
 			name = PluginCoreTest;
 			productName = test;
-			productReference = 242698A6113344A600282ED1 /* test */;
+			productReference = 242698A6113344A600282ED1 /* PluginCoreTest */;
 			productType = "com.apple.product-type.tool";
 		};
 		242699261133FBDA00282ED1 /* AudioUnitWrapper */ = {
@@ -1002,7 +1002,7 @@
 					"\"$(SRCROOT)/third-party/gtest/lib\"",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = test;
+				PRODUCT_NAME = $TARGET_NAME;
 			};
 			name = Debug;
 		};
@@ -1026,7 +1026,7 @@
 					"\"$(SRCROOT)/third-party/gtest/lib\"",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = test;
+				PRODUCT_NAME = $TARGET_NAME;
 				ZERO_LINK = NO;
 			};
 			name = Release;
