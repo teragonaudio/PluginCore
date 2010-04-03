@@ -5,3 +5,4 @@ build
 *.pbxuser
 *.perspectivev3
 third-party/vstsdk2.4/*
+.sconsign.dblite
