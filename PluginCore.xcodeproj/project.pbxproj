@@ -44,6 +44,11 @@
 		2426992E1133FBEC00282ED1 /* libinterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242698291133389100282ED1 /* libinterface.a */; };
 		244D312E11648C9B00CD3458 /* PrefixCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 244D312D11648C9B00CD3458 /* PrefixCommon.h */; };
 		244D313B11648E4000CD3458 /* PluginLoaderMac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 242698311133397100282ED1 /* PluginLoaderMac.cpp */; };
+		244D31C9116495BC00CD3458 /* ParameterFloat.h in Headers */ = {isa = PBXBuildFile; fileRef = 244D31C4116495BC00CD3458 /* ParameterFloat.h */; };
+		244D31CA116495BC00CD3458 /* ParameterSetMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 244D31C5116495BC00CD3458 /* ParameterSetMap.cpp */; };
+		244D31CB116495BC00CD3458 /* ParameterSetMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 244D31C6116495BC00CD3458 /* ParameterSetMap.h */; };
+		244D31CC116495BC00CD3458 /* PluginParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 244D31C7116495BC00CD3458 /* PluginParameter.h */; };
+		244D31CD116495BC00CD3458 /* PluginParameterSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 244D31C8116495BC00CD3458 /* PluginParameterSet.h */; };
 		249350F71134312D000BF241 /* AudioUnitWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 249350F51134312D000BF241 /* AudioUnitWrapper.h */; };
 		249350F81134312D000BF241 /* AudioUnitWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 249350F61134312D000BF241 /* AudioUnitWrapper.cpp */; };
 		249353AD1134337C000BF241 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242699C01134074000282ED1 /* ApplicationServices.framework */; };
@@ -194,6 +199,11 @@
 		242699C01134074000282ED1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		244D312311648AE000CD3458 /* PluginLoaderException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginLoaderException.h; sourceTree = "<group>"; };
 		244D312D11648C9B00CD3458 /* PrefixCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixCommon.h; sourceTree = "<group>"; };
+		244D31C4116495BC00CD3458 /* ParameterFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParameterFloat.h; path = parameter/ParameterFloat.h; sourceTree = "<group>"; };
+		244D31C5116495BC00CD3458 /* ParameterSetMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParameterSetMap.cpp; path = parameter/ParameterSetMap.cpp; sourceTree = "<group>"; };
+		244D31C6116495BC00CD3458 /* ParameterSetMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParameterSetMap.h; path = parameter/ParameterSetMap.h; sourceTree = "<group>"; };
+		244D31C7116495BC00CD3458 /* PluginParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginParameter.h; path = parameter/PluginParameter.h; sourceTree = "<group>"; };
+		244D31C8116495BC00CD3458 /* PluginParameterSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginParameterSet.h; path = parameter/PluginParameterSet.h; sourceTree = "<group>"; };
 		249350F51134312D000BF241 /* AudioUnitWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioUnitWrapper.h; sourceTree = "<group>"; };
 		249350F61134312D000BF241 /* AudioUnitWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioUnitWrapper.cpp; sourceTree = "<group>"; };
 		2493511F1134332B000BF241 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -333,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				24269802113337C200282ED1 /* buffer */,
+				244D31C3116495AC00CD3458 /* parameter */,
 				24269807113337C200282ED1 /* plugin */,
 			);
 			path = plugincore;
@@ -462,6 +473,18 @@
 			name = "VST SDK";
 			sourceTree = "<group>";
 		};
+		244D31C3116495AC00CD3458 /* parameter */ = {
+			isa = PBXGroup;
+			children = (
+				244D31C5116495BC00CD3458 /* ParameterSetMap.cpp */,
+				244D31C4116495BC00CD3458 /* ParameterFloat.h */,
+				244D31C6116495BC00CD3458 /* ParameterSetMap.h */,
+				244D31C7116495BC00CD3458 /* PluginParameter.h */,
+				244D31C8116495BC00CD3458 /* PluginParameterSet.h */,
+			);
+			name = parameter;
+			sourceTree = "<group>";
+		};
 		249353C0113434D8000BF241 /* AudioUnit SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +605,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				244D312E11648C9B00CD3458 /* PrefixCommon.h in Headers */,
+				244D31C9116495BC00CD3458 /* ParameterFloat.h in Headers */,
+				244D31CB116495BC00CD3458 /* ParameterSetMap.h in Headers */,
+				244D31CC116495BC00CD3458 /* PluginParameter.h in Headers */,
+				244D31CD116495BC00CD3458 /* PluginParameterSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,6 +814,7 @@
 			files = (
 				2426982C113338A200282ED1 /* AudioBuffer.cpp in Sources */,
 				2426982D113338A200282ED1 /* AudioBufferSet.cpp in Sources */,
+				244D31CA116495BC00CD3458 /* ParameterSetMap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

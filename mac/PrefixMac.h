@@ -7,7 +7,8 @@
  *
  */
 
-#include <Carbon/Carbon.h>
-
 #define MAC 1
 #define MACX 1
+
+#include <Carbon/Carbon.h>
+#include "PrefixCommon.h"
