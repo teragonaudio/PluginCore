@@ -1,0 +1,4 @@
+env = Environment(CPPPATH = ['../source', '../third-party/gtest/include'],
+    LIBPATH = ['../third-party/gtest/lib', '../source'],
+    LIBS = ['libgtest', 'libgtest_main', 'libPluginCoreInterface'])
+PluginCoreTest = env.Program('PluginCoreTest', Glob('plugincore/*/*.cpp'))
