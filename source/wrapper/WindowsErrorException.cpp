@@ -1,3 +1,5 @@
+#if WINDOWS
+
 #ifndef __WindowsErrorException_h__
 #include "WindowsErrorException.h"
 #endif
@@ -40,3 +42,5 @@ namespace teragon {
     }
   }
 }
+
+#endif

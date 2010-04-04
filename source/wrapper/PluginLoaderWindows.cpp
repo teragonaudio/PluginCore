@@ -1,8 +1,9 @@
+#if WINDOWS
+
 #ifndef __PluginLoaderWindows_h__
 #include "wrapper/PluginLoaderWindows.h"
 #endif
 
-#if WINDOWS
 #include <Windows.h>
 #include <string>
 
@@ -162,4 +163,5 @@ namespace plugincore {
   }
 }
 }
+
 #endif

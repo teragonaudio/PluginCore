@@ -1,7 +1,10 @@
+#if MAC
+
 #ifndef __PluginLoaderMac_h__
 #include "PluginLoaderMac.h"
 #endif
 
+#include <Carbon/Carbon.h>
 #include <dlfcn.h>
 
 namespace teragon {
@@ -65,3 +68,5 @@ namespace teragon {
     }
   }
 }
+
+#endif
