@@ -1,14 +1,5 @@
-PluginCore Audio Plugin Framework
+PluginCore has been deprecated, but it still exists on GitHub for projects which have it as a third-party submodule.
 
-PluginCore is a framework for creating audio processing plugins for sequencers or trackers.  It aims to abstract away as much of the underlying plugin and platform API as possible, and allow rapid development of audio plugins with a high degree of testability.  Currently, PluginCore supports the VST and AudioUnit protocols for both effect and instrument plugins.  The wrapper plugins have been ported to Windows (XP, Vista, 7) and Mac OSX (10.5 and up, PPC and Intel architectures).
+If you are looking for a good library to use for cross-platform audio plugin programming, I recommend [Juce][1] instead, which is what the Teragon Audio plugins now use.
 
-PluginCore contains two components: the actual plugin interface, and wrapper plugins for each supported platform.  To create a new plugin, one must create a new dynamic library which implements the a single plugin interface, and copy and rename the wrapper plugins which will the end user will copy into their plugin folder.  Further instructions on development and redistribution can be found in the official project documentation.
-
-To build PluginCore, you will need a copy of the VST SDK, which is not distributed with this library due to licensing restrictions.  For more information, consult the README file located in the third-party/vstsdk2.4 directory.
-
-This project is hosted at the following addresses:
-
-Project Page: http://www.teragon.org/p/PluginCore.html
-Source Code: http://www.github.com/teragonaudio/PluginCore
-Documentation and Wiki: http://wiki.github.com/teragonaudio/PluginCore
-Issue Tracker: http://teragonaudio.lighthouseapp.com/projects/47371-plugincore
+[1]: http://rawmaterialsoftware.com/juce.php
