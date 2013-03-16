@@ -1,6 +1,0 @@
-Import('PluginCoreEnv')
-
-PluginCoreEnv.Append(CPPPATH = ['../source', '../third-party/gtest/include'])
-PluginCoreEnv.Append(LIBPATH = ['../third-party/gtest/lib', '../source'])
-PluginCoreEnv.Append(LIBS = ['libgtest', 'libgtest_main', 'libPluginCoreInterface'])
-PluginCoreTest = PluginCoreEnv.Program('PluginCoreTest', Glob('plugincore/*/*.cpp'))

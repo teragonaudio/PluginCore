@@ -1,1 +1,0 @@
-This directory contains various third-party libraries required to build plugincore.  Those which are legally allowed to be redistributed alongside plugincore contain separate licensing agreements, which can be found in their respective subdirectories.
